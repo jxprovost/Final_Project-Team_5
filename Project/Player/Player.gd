@@ -6,7 +6,7 @@ const _MAX_SPEED = 100
 
 var _velocity = Vector2.ZERO
 
-onready var animatedSprite = $AnimatedSprite
+onready var animation_player = $AnimationPlayer
 
 
 func _physics_process(delta):
@@ -16,10 +16,17 @@ func _physics_process(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
-		animatedSprite.play("Run")
+		if input_vector.x > 0:
+			animation_player.play("RunRight")
+		elif input_vector.x < 0:
+			animation_player.play("RunLeft")
+		elif input_vector.y > 0:
+			animation_player.play("RunDown")
+		elif input_vector.y < 0:
+			animation_player.play("RunUp")
 		_velocity = _velocity.move_toward(input_vector * _MAX_SPEED, _ACCELERATION * delta)
 	else:
-		animatedSprite.play("Idle")
+		animation_player.play("Idle")
 		_velocity = _velocity.move_toward(Vector2.ZERO, _FRICTION * delta)
 	
 	print(_velocity)
