@@ -18,14 +18,15 @@ var _knockback := Vector2.ZERO
 
 var _state = State.IDLE
 
-onready var sprite = $AnimatedSprite
-onready var stats := $Stats
-onready var playerDetectionZone := $PlayerDetectionZone
+onready var _sprite := $AnimatedSprite
+onready var _stats := $Stats
+onready var _playerDetectionZone := $PlayerDetectionZone
+onready var _hurtbox := $Hurtbox
 
 
 func _ready():
-	print(stats.max_health)
-	print(stats.health)
+	print(_stats.max_health)
+	print(_stats.health)
 
 
 func _physics_process(delta):
@@ -41,25 +42,26 @@ func _physics_process(delta):
 			pass
 		
 		State.CHASE:
-			var player = playerDetectionZone.player
+			var player = _playerDetectionZone.player
 			if player != null:
 				var direction = (player.global_position - global_position).normalized()
 				_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta)
 			else:
 				_state = State.IDLE
-			sprite.flip_h = _velocity.x < 0
+			_sprite.flip_h = _velocity.x < 0
 	
 	_velocity = move_and_slide(_velocity)
 
 
 func seek_player():
-	if playerDetectionZone.can_see_player():
+	if _playerDetectionZone.can_see_player():
 		_state = State.CHASE
 
 
 func _on_Hurtbox_area_entered(hitbox):
-	stats.health -= hitbox.damage
+	_stats.health -= hitbox.damage
 	_knockback = hitbox.knockback_vector * _KNOCKBACK_FORCE
+	_hurtbox.create_hit_effect(hitbox)
 
 
 func _on_Stats_no_health():
