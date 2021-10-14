@@ -18,8 +18,8 @@ var _velocity := Vector2.ZERO
 onready var _swordHitbox := $HitboxPivot/SwordHitbox
 onready var _animationPlayer := $AnimationPlayer
 onready var _animationTree := $AnimationTree
-onready var _animationState = _animationTree.get("parameters/playback")
 onready var _hurtbox := $Hurtbox
+onready var _animationState = _animationTree.get("parameters/playback")
 
 
 func _ready():

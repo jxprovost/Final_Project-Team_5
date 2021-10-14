@@ -5,17 +5,9 @@ signal invincibility_ended
 
 const HitEffect := preload("res://Effects/HitEffect.tscn")
 
-var invincible := false #setget set_invincible
+var invincible := false
 
 onready var timer := $Timer
-
-
-#func set_invincible(value):
-#	invincible = value
-#	if invincible == true:
-#		emit_signal("invincibility_started")
-#	else:
-#		emit_signal("invincibility_ended")
 
 
 func start_invincibility(duration):
