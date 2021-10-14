@@ -1,12 +1,13 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Enemies/bat_sprite_sheet.png" type="Texture" id=1]
 [ext_resource path="res://Shadows/small_shadow.png" type="Texture" id=2]
-[ext_resource path="res://HitboxesAndHurtboxes/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Overlap/Hurtbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/Bat.gd" type="Script" id=4]
 [ext_resource path="res://Stats/Stats.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemies/PlayerDetectionZone.tscn" type="PackedScene" id=6]
-[ext_resource path="res://HitboxesAndHurtboxes/Hitbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Overlap/SoftCollision.tscn" type="PackedScene" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -44,6 +45,9 @@ height = 4.0
 [sub_resource type="CircleShape2D" id=9]
 radius = 3.0
 
+[sub_resource type="CircleShape2D" id=10]
+radius = 6.0
+
 [node name="Bat" type="KinematicBody2D"]
 collision_layer = 16
 script = ExtResource( 4 )
@@ -51,7 +55,7 @@ script = ExtResource( 4 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )
 animation = "fly"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, -12 )
 
@@ -85,9 +89,15 @@ collision_mask = 4
 position = Vector2( 0, -9 )
 shape = SubResource( 9 )
 
+[node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+shape = SubResource( 10 )
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]
 [editable path="Hitbox"]
+[editable path="SoftCollision"]
