@@ -17,7 +17,7 @@ TAKE OUT THOSE BATS!!!!!!
 
 ## Project Report
 
-Reflection:
+Reflection: This is my best project in this class so far, but I still didn't get to do everything I wanted. I spent a lot of time looking at videos and posts, to find new ways of doing things that I never knew about. Some of them were really easy to use, and practical. Others... not so much. A big part of this projects challenge for me, was that I decided to make all of my own assets. I am pleased with my progress, and how they turned out. But for something like this, I probably should have just pulled something from the web. I ended up using a font I didnt make, but I would like to eventually prelace that as well. I am also looking into making my own sounds with a friend of mine who graduated with that specialty. As for as the code style, I am confident that I have followed the format correctly. But I could (and probably might be) wrong, so if you find anything let me know.
 
 Self Evaluation:
 - [x] D-1: The repository link is submitted to Canvas before the project deadline.
