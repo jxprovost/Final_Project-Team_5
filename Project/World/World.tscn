@@ -147,7 +147,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 [sub_resource type="ConvexPolygonShape2D" id=48]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
-[sub_resource type="TileSet" id=1]
+[sub_resource type="TileSet" id=49]
 0/name = "wall_tileset.png 0"
 0/texture = ExtResource( 4 )
 0/tex_offset = Vector2( 0, 0 )
@@ -464,7 +464,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 320, 180 )
 
 [node name="WallTileMap" type="TileMap" parent="."]
-tile_set = SubResource( 1 )
+tile_set = SubResource( 49 )
 cell_size = Vector2( 32, 32 )
 collision_mask = 0
 format = 1
@@ -490,4 +490,4 @@ position = Vector2( 80, 144 )
 position = Vector2( 240, 144 )
 
 [node name="Bat" parent="YSort" instance=ExtResource( 5 )]
-position = Vector2( 120, 88 )
+position = Vector2( 48, 80 )
