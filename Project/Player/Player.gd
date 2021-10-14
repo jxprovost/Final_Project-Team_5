@@ -27,9 +27,6 @@ func _physics_process(delta):
 		MOVE:
 			move_state(delta)
 			
-		ROLL:
-			pass
-			
 		ATTACK:
 			attack_state(delta)
 
@@ -50,10 +47,14 @@ func move_state(delta):
 		animation_state.travel("Idle")
 		_velocity = _velocity.move_toward(Vector2.ZERO, _FRICTION * delta)
 	
-	_velocity = move_and_slide(_velocity)
+	move()
 	
 	if Input.is_action_just_pressed("attack"):
 		_state = ATTACK
+
+
+func move():
+	_velocity = move_and_slide(_velocity)	
 
 
 func attack_state(_delta):
