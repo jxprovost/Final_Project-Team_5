@@ -12,14 +12,17 @@ const _MAX_SPEED = 100
 
 var _state = MOVE
 var _velocity = Vector2.ZERO
+var knockback_vector = Vector2.LEFT
 
 onready var animation_player = $AnimationPlayer
 onready var animation_tree = $AnimationTree
 onready var animation_state = animation_tree.get("parameters/playback")
+onready var sword_hitbox = $HitboxPivot/SwordHitbox
 
 
 func _ready():
 	animation_tree.active = true
+	sword_hitbox.knockback_vector = knockback_vector
 
 
 func _physics_process(delta):
@@ -38,6 +41,7 @@ func move_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		sword_hitbox.knockback_vector = input_vector
 		animation_tree.set("parameters/Idle/blend_position", input_vector)
 		animation_tree.set("parameters/Run/blend_position", input_vector)
 		animation_tree.set("parameters/Attack/blend_position", input_vector)
