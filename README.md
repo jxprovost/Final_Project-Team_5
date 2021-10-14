@@ -15,3 +15,5 @@ Grade Earned:
 I believe that this project has earned a grade of _GRADE HERE_ in accordance with the required documentation and functionality.
 
 ## Third Party Assets
+
+- [Roboto](https://fonts.google.com/specimen/Roboto) licensed under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).

@@ -38,10 +38,7 @@ func _physics_process(delta):
 		State.IDLE:
 			_velocity = _velocity.move_toward(Vector2.ZERO, _FRICTION * delta)
 			seek_player()
-		
-		State.WANDER:
-			pass
-		
+			
 		State.CHASE:
 			var player = _playerDetectionZone.player
 			if player != null:
