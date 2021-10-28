@@ -23,6 +23,7 @@ onready var _animationState = _animationTree.get("parameters/playback")
 
 
 func _ready():
+	stats.set_health(stats.max_health)
 	stats.connect("no_health", self, "queue_free")
 	_animationTree.active = true
 	_swordHitbox.knockback_vector = _knockback_vector
