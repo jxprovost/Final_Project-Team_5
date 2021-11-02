@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal bat_defeated
+
 enum State {
 	IDLE,
 	WANDER,
@@ -65,6 +67,7 @@ func _on_Hurtbox_area_entered(hitbox):
 
 
 func _on_Stats_no_health():
+	emit_signal("bat_defeated")
 	queue_free()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)

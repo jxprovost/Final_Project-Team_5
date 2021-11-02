@@ -34,7 +34,7 @@ Self Evaluation:
 - [X] B-3: The source code and project structure comply with our adopted style guides.
 - [X] B-4: Clear progress has been made on the game with respect to the project plan.
 - [X] A-1: The source code contains no warnings. All warnings are properly addressed, not just ignored.
-- [ ] A-2: The game includes the conventional player experience loop of title, gameplay, and ending.
+- [X] A-2: The game includes the conventional player experience loop of title, gameplay, and ending.
 - [ ] A-3: Earn <em>N</em>*&lceil;<em>P</em>/2&rceil; stars, where <em>N</em> is the iteration number and <em>P</em> is the number of people on the team.
 - [X] ⭐ Include a dynamic (non-static) camera
 - [ ] ⭐ Incorporate parallax background scrolling
@@ -45,7 +45,7 @@ Self Evaluation:
 - [ ] ⭐ Incorporate juiciness and document it in the <code>README.md</code>
 - [ ] ⭐ Use particle effects
 - [ ] ⭐ Use different layers and masks to manage collisions and document this in the <code>README.md</code>
-- [ ] ⭐ Incorporate pop into your HUD or title screen using <code>Tween</code> or <code>AnimationPlayer</code>
+- [X] ⭐ Incorporate pop into your HUD or title screen using <code>Tween</code> or <code>AnimationPlayer</code>
 - [X] ⭐ Include an AI-controlled character
 - [ ] ⭐ Add a pause menu that includes, at minimum, the ability to resume or return to the main menu
 - [ ] ⭐ The game is released publicly on <code>itch.io</code>, with all the recommended accompanying text, screenshots, gameplay videos, <i>etc.</i>
@@ -57,3 +57,5 @@ We believe that this project has earned a grade of _INSERT_GRADE_HERE_ in accord
 ## Third Party Assets
 
 - [Roboto](https://fonts.google.com/specimen/Roboto) licensed under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+
+- 
