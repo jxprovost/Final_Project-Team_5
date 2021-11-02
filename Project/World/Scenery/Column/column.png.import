@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/column.png-2e100fa01b6ceb9bc14d8fd15a58eb23.stex"
+path="res://.import/column.png-d624a373ef96eec6ac496db700d2ffa0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Scenery/column.png"
-dest_files=[ "res://.import/column.png-2e100fa01b6ceb9bc14d8fd15a58eb23.stex" ]
+source_file="res://World/Scenery/Column/column.png"
+dest_files=[ "res://.import/column.png-d624a373ef96eec6ac496db700d2ffa0.stex" ]
 
 [params]
 
