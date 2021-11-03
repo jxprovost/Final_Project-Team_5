@@ -3,14 +3,9 @@
 [ext_resource path="res://World/Menu.gd" type="Script" id=1]
 [ext_resource path="res://World/Scenery/floor_tile.png" type="Texture" id=2]
 [ext_resource path="res://World/Scenery/wall_tileset.png" type="Texture" id=3]
-<<<<<<< HEAD
-[ext_resource path="res://World/Scenery/Column.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Scenery/Column/Column.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/Astloch/Astloch-Bold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://fonts/Metal_Mania/MetalMania-Regular.ttf" type="DynamicFontData" id=6]
-=======
-[ext_resource path="res://World/Scenery/Column/Column.tscn" type="PackedScene" id=4]
-[ext_resource path="res://World/Roboto-Black.ttf" type="DynamicFontData" id=5]
->>>>>>> 494326ebea83960619627f7615cbc21e7b9e015b
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
