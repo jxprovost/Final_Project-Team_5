@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button.png-8739d45287c895a518ac01f70d9c0a0b.stex"
+path="res://.import/door.png-5c9d3876dfc01bc01fad2d2d4105a1b0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Scenery/Button/button.png"
-dest_files=[ "res://.import/button.png-8739d45287c895a518ac01f70d9c0a0b.stex" ]
+source_file="res://World/Interactive/Door/door.png"
+dest_files=[ "res://.import/door.png-5c9d3876dfc01bc01fad2d2d4105a1b0.stex" ]
 
 [params]
 
