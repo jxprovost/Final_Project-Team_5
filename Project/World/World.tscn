@@ -435,11 +435,10 @@ __meta__ = {
 }
 
 [node name="Loss" type="Label" parent="Camera2D/Control"]
-visible = false
 margin_left = -118.013
-margin_top = -28.9056
+margin_top = -23.6337
 margin_right = 116.987
-margin_bottom = 61.0944
+margin_bottom = 66.3663
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.258824, 0.258824, 1 )
 text = "You Died
@@ -451,7 +450,6 @@ __meta__ = {
 }
 
 [node name="Menu" type="Button" parent="Camera2D/Control"]
-visible = false
 margin_left = -56.4928
 margin_top = -8.5665
 margin_right = 55.5072

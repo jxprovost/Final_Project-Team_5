@@ -10,7 +10,6 @@ func _process(_delta):
 		quit_level()
 		
 	if bats_defeated == 8:
-		print("all_bats_defeated")
 		complete_bat_quest()
 
 
