@@ -31,37 +31,24 @@ func _on_Player_tree_exited():
 	$Camera2D/Control/Menu.visible = true
 
 
-func _on_Bat_bat_defeated():
-	bats_defeated += 1
-
-
-func _on_Bat2_bat_defeated():
-	bats_defeated += 1
-
-
-func _on_Bat3_bat_defeated():
-	bats_defeated += 1
-
-
-func _on_Bat4_bat_defeated():
-	bats_defeated += 1
-
-
-func _on_Bat5_bat_defeated():
-	bats_defeated += 1
-
-
-func _on_Bat6_bat_defeated():
-	bats_defeated += 1
-
-
-func _on_Bat7_bat_defeated():
-	bats_defeated += 1
-
-
-func _on_Bat8_bat_defeated():
-	bats_defeated += 1
+func _on_Bats_defeated():
+	var enemyList = get_tree().get_nodes_in_group("enemy")
+	if enemyList.size() == 0:
+		complete_bat_quest()
 
 
 func _on_Menu_pressed():
 	var _ignored := get_tree().change_scene("res://World/Menu.tscn")
+
+
+export (PackedScene) var Bat
+
+func spawn_Bat():
+	var bat = Bat.instance()
+	$YSort/Enemies.add_child(bat)
+	bat.position = Vector2.ZERO
+	var _ignored = bat.connect("bat_defeated", self, "_on_Bats_defeated")
+
+
+func _on_Button_pressed():
+	spawn_Bat()

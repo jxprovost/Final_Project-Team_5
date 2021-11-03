@@ -40,4 +40,8 @@ scale = Vector2( 0.680001, 0.4 )
 position = Vector2( 0, 4.415 )
 shape = SubResource( 4 )
 
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_CooldownTimer_timeout"]
