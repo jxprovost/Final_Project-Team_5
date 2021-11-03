@@ -3,10 +3,9 @@
 [ext_resource path="res://World/Interactive/Door/door.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 32 )
+extents = Vector2( 32.0535, 16.0193 )
 
 [node name="Door" type="StaticBody2D"]
-scale = Vector2( 0.639998, 0.639998 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
