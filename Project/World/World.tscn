@@ -435,6 +435,7 @@ __meta__ = {
 }
 
 [node name="Loss" type="Label" parent="Camera2D/Control"]
+visible = false
 margin_left = -118.013
 margin_top = -23.6337
 margin_right = 116.987
@@ -450,6 +451,7 @@ __meta__ = {
 }
 
 [node name="Menu" type="Button" parent="Camera2D/Control"]
+visible = false
 margin_left = -56.4928
 margin_top = -8.5665
 margin_right = 55.5072
