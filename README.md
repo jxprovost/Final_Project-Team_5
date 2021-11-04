@@ -58,4 +58,8 @@ We believe that this project has earned a grade of _INSERT_GRADE_HERE_ in accord
 
 - [Roboto](https://fonts.google.com/specimen/Roboto) licensed under [Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
-- 
+- Font is "Metal Mania". Copyright &copy; 2012 <dathanboardman@gmail.com>, with Reserved Font Name Metal Mania, SIL open font license version 1.1. Details are in `fonts/Metal_Mania/OFL.txt`.
+
+- Font is "Astloch". Copyright &copy; 2010-2011 Daniel Rhatigan <sparky@ultrasparky.org>, with Reserved Font Name Astloch, SIL open font liscense version 1.1. Details are in 'fonts/Astloch/OFL.txt'
+
+- Font is "Nosifer". Copyright &copy; 2011 Typomando, with Reserved Font Name Astloch, SIL open font liscense version 1.1. Details are in 'fonts/Nosifer/OFL.txt'
