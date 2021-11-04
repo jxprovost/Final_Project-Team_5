@@ -56,9 +56,9 @@ Self Evaluation:
 - [ ] ⭐ Add a pause menu that includes, at minimum, the ability to resume or return to the main menu
 - [ ] ⭐ The game is released publicly on <code>itch.io</code>, with all the recommended accompanying text, screenshots, gameplay videos, <i>etc.</i>
 
-Grade Earned: TODO
+Grade Earned: A
 
-We believe that this project has earned a grade of _INSERT_GRADE_HERE_ in accordance with the required documentation and functionality.
+We believe that this project has earned a grade of A in accordance with the required documentation and functionality.
 
 ## Third Party Assets
 
