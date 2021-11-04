@@ -2,6 +2,7 @@ extends Node2D
 
 var bats_defeated := 0
 
+
 func _process(_delta):
 	if Input.is_action_pressed("reset"):
 		reset_level()
