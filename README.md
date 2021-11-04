@@ -17,19 +17,25 @@ TAKE OUT THOSE BATS!!!!!!
 
 ## Project Report
 
-Reflection: TODO
+Reflection:
+
+For this iteration, our team displayed great communication skills and cooperation. We were able to meet most of our goals to create a cohesive product for this iteration. Our project currently meets the basic functionality which we envisioned during planning.
+
+One of the issues that arose came from a planned issue featuring difficulty as a physical object in the game. This idea is 'unique' and 'interesting', but ultimately serves no purpose other than adding flavor to our game to separate it from genre norms. This idea stemmed from a group members involvement in a game design course, rather than practical ideas relating to this course. The nature of this idea created a much larger amount of work than anticipated, and as such we were unable to fully implement it in this iteration. As a group we collectively decided to push it back into the worklog, and hope to possibly implement it in a future iteration, but we may even decide to drop it from the project entirely, depending on where we want to take this project in future iterations.
+
+Another issue that our team experienced was multiple people working on a specific scene at one time. The resulting merge conflicts created a large blockage in workflow which needs to be fixed. For this next iteration, we will implement a better communication system to ensure that we do not encounter these conflicts.
 
 Self Evaluation:
-- [ ] D-1: The repository link is submitted to Canvas before the project deadline.
+- [X] D-1: The repository link is submitted to Canvas before the project deadline.
 - [X] D-2: The repository contains a <code>README.md</code> file in its top-level directory.
 - [X] D-3: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of M or less.
 - [X] C-1: Your repository is well-formed, with an appropriate <code>.gitignore</code> file and no unnecessary files tracked.
-- [ ] C-2: Your release is tagged using <a href="https://semver.org/">semantic versioning</a> where the major version is zero, the minor version is the iteration number, and the patch version is incremented as usual for each change made to the minor version, and the release name matches the release tag.
+- [X] C-2: Your release is tagged using <a href="https://semver.org/">semantic versioning</a> where the major version is zero, the minor version is the iteration number, and the patch version is incremented as usual for each change made to the minor version, and the release name matches the release tag.
 - [X] C-3: You have a clear legal right to use all incorporated assets, and the licenses for all third-party assets are tracked in the <code>README.md</code> file.
 - [X] C-4: The <code>README.md</code> contains instructions for how to play the game or such instructions are incorporated into the game itself.
 - [X] C-5: The project content is eligible for an <a href="https://www.esrb.org/ratings-guide/">ESRB Rating</a> of T or less.
 - [X] C-6: The release demonstrates the core gameplay loop: the player can take actions that move them toward a goal.
-- [ ] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
+- [X] B-1: The <code>README.md</code> file contains a personal reflection on the iteration and self-evaluation, as defined above.
 - [X] B-2: The game runs without errors or warnings.
 - [X] B-3: The source code and project structure comply with our adopted style guides.
 - [X] B-4: Clear progress has been made on the game with respect to the project plan.
