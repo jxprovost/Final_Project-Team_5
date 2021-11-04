@@ -62,4 +62,4 @@ We believe that this project has earned a grade of _INSERT_GRADE_HERE_ in accord
 
 - Font is "Astloch". Copyright &copy; 2010-2011 Daniel Rhatigan <sparky@ultrasparky.org>, with Reserved Font Name Astloch, SIL open font liscense version 1.1. Details are in `fonts/Astloch/OFL.txt`.
 
-- Font is "Nosifer". Copyright &copy; 2011 Typomando, with Reserved Font Name Astloch, SIL open font liscense version 1.1. Details are in `fonts/Nosifer/OFL.txt`.
+- Font is "Nosifer". Copyright &copy; 2011 Typomando, with Reserved Font Name Nosifer, SIL open font liscense version 1.1. Details are in `fonts/Nosifer/OFL.txt`.
