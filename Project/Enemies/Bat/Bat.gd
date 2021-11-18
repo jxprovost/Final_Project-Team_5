@@ -27,11 +27,6 @@ onready var _hurtbox := $Hurtbox
 onready var _softcollision := $SoftCollision
 
 
-func _ready():
-	print(_stats.max_health)
-	print(_stats.health)
-
-
 func _physics_process(delta):
 	_knockback = _knockback.move_toward(Vector2.ZERO, _FRICTION * delta)
 	_knockback = move_and_slide(_knockback)

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/mimic_sprite_sheet.png-89f05e9944e8758f55aae819ae15e598.stex"
+path="res://.import/bat_sprite_sheet.png-f8114427d8de1d1f185de82c474ed256.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Enemies/mimic_sprite_sheet.png"
-dest_files=[ "res://.import/mimic_sprite_sheet.png-89f05e9944e8758f55aae819ae15e598.stex" ]
+source_file="res://Enemies/Bat/bat_sprite_sheet.png"
+dest_files=[ "res://.import/bat_sprite_sheet.png-f8114427d8de1d1f185de82c474ed256.stex" ]
 
 [params]
 
