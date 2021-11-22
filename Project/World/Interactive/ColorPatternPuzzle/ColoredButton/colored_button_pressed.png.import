@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/door.png-5c9d3876dfc01bc01fad2d2d4105a1b0.stex"
+path="res://.import/colored_button_pressed.png-314df6d797c0d8174a9a5846772c823a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://World/Interactive/Door/door.png"
-dest_files=[ "res://.import/door.png-5c9d3876dfc01bc01fad2d2d4105a1b0.stex" ]
+source_file="res://World/Interactive/ColorPatternPuzzle/ColoredButton/colored_button_pressed.png"
+dest_files=[ "res://.import/colored_button_pressed.png-314df6d797c0d8174a9a5846772c823a.stex" ]
 
 [params]
 

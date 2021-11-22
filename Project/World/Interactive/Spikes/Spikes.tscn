@@ -2,7 +2,7 @@
 
 [ext_resource path="res://World/Interactive/Spikes/Spikes.gd" type="Script" id=1]
 [ext_resource path="res://World/Interactive/Spikes/spikes.png" type="Texture" id=2]
-[ext_resource path="res://Modular_Assets/Hitbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Overlap/Hitbox.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Down"
@@ -74,7 +74,6 @@ anims/Popup = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 10
-frame = 3
 
 [node name="Hitbox" parent="." instance=ExtResource( 3 )]
 collision_mask = 4
