@@ -69,3 +69,13 @@ We believe that this project has earned a grade of A in accordance with the requ
 - Font is "Astloch". Copyright &copy; 2010-2011 Daniel Rhatigan <sparky@ultrasparky.org>, with Reserved Font Name Astloch, SIL open font liscense version 1.1. Details are in `fonts/Astloch/OFL.txt`.
 
 - Font is "Nosifer". Copyright &copy; 2011 Typomando, with Reserved Font Name Nosifer, SIL open font liscense version 1.1. Details are in `fonts/Nosifer/OFL.txt`.
+
+- swoosh.wav "SwordSwoosh". Created by lesaucisson, edited by Max Braun, CC0 1.0 Universal. Source: https://freesound.org/people/lesaucisson/sounds/585257/
+
+- squeak.wav "Squeak". Created by uwesoundboiz, edited by Max Braun, CC0 1.0 Universal. Source: https://freesound.org/people/uwesoundboiz/sounds/109831/
+
+- footsteps.wav "Footsteps". Created by Nox_Sound, edited by Max Braun, CC0 1.0 Universal. Source: https://freesound.org/people/Nox_Sound/sounds/490951/
+
+- hit.wav "Hit". Created by Max Braun
+
+- BackgroundMusic.mp3 "BackgroundMusic" by Jaren Provost
