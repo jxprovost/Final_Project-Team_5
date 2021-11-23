@@ -56,6 +56,7 @@ func seek_player():
 
 
 func _on_Hurtbox_area_entered(hitbox):
+	$Squeak.play()
 	_stats.health -= hitbox.damage
 	_knockback = hitbox.knockback_vector * _KNOCKBACK_FORCE
 	_hurtbox.create_hit_effect(hitbox)
@@ -66,4 +67,5 @@ func _on_Stats_no_health():
 	queue_free()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
+	enemyDeathEffect.get_node("BatDeath").play()
 	enemyDeathEffect.global_position = global_position
