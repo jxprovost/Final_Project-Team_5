@@ -46,9 +46,8 @@ func move_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
-		if footsteps_playing == false:
+		if $Footsteps.playing == false:
 			$Footsteps.playing = true
-			footsteps_playing = true
 		_swordHitbox.knockback_vector = input_vector
 		_animationTree.set("parameters/Idle/blend_position", input_vector)
 		_animationTree.set("parameters/Run/blend_position", input_vector)
@@ -56,9 +55,8 @@ func move_state(delta):
 		_animationState.travel("Run")
 		_velocity = _velocity.move_toward(input_vector * _MAX_SPEED, _ACCELERATION * delta)
 	else:
-		if footsteps_playing == true:
+		if $Footsteps.playing == true:
 			$Footsteps.playing = false
-			footsteps_playing = false
 		_animationState.travel("Idle")
 		_velocity = _velocity.move_toward(Vector2.ZERO, _FRICTION * delta)
 	
