@@ -3,14 +3,14 @@ extends Node2D
 
 signal solved
 
-#var colorPatternButtonSpawn = get_tree().get_root().get_node("World").get_node("ColorPatternButtonSpawn")
-#var colorPatternPodiumSpawn = get_tree().get_root().get_node("World").get_node("ColorPatternPodiumSpawn")
 
 const _button_colors := [Color.red, Color.green, Color.blue, Color.yellow]
 
-var _base_combination = []
-var _input_combination = []
-var _solved = false
+
+var _base_combination : PoolColorArray = []
+var _input_combination : PoolColorArray = []
+var _solved := false
+
 
 func _ready():
 	$Buttons/RedButton.initialize(_button_colors[0])
@@ -22,6 +22,7 @@ func _ready():
 	$Podiums/ColoredCrystalPodium1.initialize(_base_combination[1])
 	$Podiums/ColoredCrystalPodium2.initialize(_base_combination[2])
 	$Podiums/ColoredCrystalPodium3.initialize(_base_combination[3])
+
 
 func randomizeCombination():
 	var _rng = RandomNumberGenerator.new()

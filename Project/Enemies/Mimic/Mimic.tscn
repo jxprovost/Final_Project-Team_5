@@ -46,31 +46,31 @@ region = Rect2( 0, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 4320, 0, 480, 480 )
+region = Rect2( 0, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 4800, 0, 480, 480 )
+region = Rect2( 4320, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 5280, 0, 480, 480 )
+region = Rect2( 4800, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 5760, 0, 480, 480 )
+region = Rect2( 5280, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 480, 480, 480 )
+region = Rect2( 5760, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 480, 480, 480, 480 )
+region = Rect2( 0, 480, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 480, 480 )
+region = Rect2( 480, 480, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
@@ -175,14 +175,14 @@ animations = [ {
 "name": "hide",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 10 ) ],
-"loop": true,
-"name": "blink",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 16 ) ],
+"frames": [ SubResource( 10 ) ],
 "loop": true,
 "name": "chest",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 11 ) ],
+"loop": true,
+"name": "blink",
 "speed": 10.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],

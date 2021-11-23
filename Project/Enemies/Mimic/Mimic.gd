@@ -7,7 +7,7 @@ enum State {
 	ACTIVE,
 	SEEK,
 	ATTACK,
-	HIT
+	HIT,
 	}
 
 const EnemyDeathEffect := preload("res://Effects/EnemyDeathEffect.tscn")
@@ -17,7 +17,7 @@ const _MAX_SPEED := 20
 const _FRICTION := 200
 const _KNOCKBACK_FORCE := 100
 
-var _mimic_awareness = "sleeping"
+var _mimic_awareness := "sleeping"
 var _velocity := Vector2.ZERO
 var _knockback := Vector2.ZERO
 var _state = State.INACTIVE

@@ -32,7 +32,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -16 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "Unextend"
 length = 0.85
 step = 0.05
@@ -61,7 +61,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -16 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 8, 16 )
 
 [node name="PistonTrap" type="StaticBody2D"]
@@ -73,11 +73,11 @@ hframes = 17
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Extend = SubResource( 1 )
-anims/Unextend = SubResource( 3 )
+anims/Unextend = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -16 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="CooldownTime" type="Timer" parent="."]
 wait_time = 2.0

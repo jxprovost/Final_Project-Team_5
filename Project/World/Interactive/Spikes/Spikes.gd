@@ -5,7 +5,7 @@ export var automatic := false
 export var automaticTime := 1.0
 
 
-var _activated = false
+var _activated := false
 
 
 func _ready():
@@ -24,6 +24,7 @@ func _on_AutomaticTimer_timeout():
 func _on_TriggerArea2D_body_entered(_body):
 	if automatic == false and _activated == false:
 		_spike()
+
 
 func _on_TriggerArea2D_body_exited(_body):
 	if automatic == false and _activated == true:
