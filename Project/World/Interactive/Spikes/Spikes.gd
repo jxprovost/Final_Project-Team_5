@@ -1,15 +1,44 @@
 extends Node2D
 
 
-
-func _on_TrapArea2D_area_entered(_area):
-	if $CooldownTimer.time_left <= 0:
-		$AnimationPlayer.play("Popup")
+export var automatic := false
+export var automaticTime := 0.0
 
 
-func _on_TrapArea2D_area_exited(_area):
-	$CooldownTimer.start()
+var _activated = false
 
 
-func _on_CooldownTimer_timeout():
-	$AnimationPlayer.play("Down")
+func _ready():
+	$AutomaticTimer.wait_time = automaticTime
+	if automatic == true:
+		$AutomaticTimer.start()
+
+
+func _on_AutomaticTimer_timeout():
+	if _activated == false:
+		_spike()
+	else:
+		_unspike()
+
+
+func _on_TriggerArea2D_body_entered(_body):
+	if automatic == false and _activated == false:
+		_spike()
+
+func _on_TriggerArea2D_body_exited(_body):
+	if automatic == false and _activated == true:
+		_unspike()
+
+
+func _spike():
+	$AnimationPlayer.play("Spike")
+	$SpikeSound.pitch_scale = 1
+	$SpikeSound.play()
+	_activated = true
+
+
+func _unspike():
+	$AnimationPlayer.play("Unspike")
+	$SpikeSound.pitch_scale = 1.2
+	$SpikeSound.play()
+	_activated = false
