@@ -14,6 +14,7 @@ var stats = PlayerStats
 var _state = State.MOVE
 var _knockback_vector := Vector2.DOWN
 var _velocity := Vector2.ZERO
+var footsteps_playing = false
 
 onready var _swordHitbox := $HitboxPivot/SwordHitbox
 onready var _animationPlayer := $AnimationPlayer
@@ -45,6 +46,9 @@ func move_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		if footsteps_playing == false:
+			$Footsteps.playing = true
+			footsteps_playing = true
 		_swordHitbox.knockback_vector = input_vector
 		_animationTree.set("parameters/Idle/blend_position", input_vector)
 		_animationTree.set("parameters/Run/blend_position", input_vector)
@@ -52,12 +56,16 @@ func move_state(delta):
 		_animationState.travel("Run")
 		_velocity = _velocity.move_toward(input_vector * _MAX_SPEED, _ACCELERATION * delta)
 	else:
+		if footsteps_playing == true:
+			$Footsteps.playing = false
+			footsteps_playing = false
 		_animationState.travel("Idle")
 		_velocity = _velocity.move_toward(Vector2.ZERO, _FRICTION * delta)
 	
 	move()
 	
 	if Input.is_action_just_pressed("attack"):
+		$SwordSwoosh.play()
 		_state = State.ATTACK
 
 
@@ -75,6 +83,7 @@ func attack_animation_finished():
 
 
 func _on_Hurtbox_area_entered(area):
+	$Hit.play()
 	stats.health -= 1
 	_hurtbox.start_invincibility(1)
 	_hurtbox.create_hit_effect(area)
