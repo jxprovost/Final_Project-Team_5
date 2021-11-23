@@ -1,7 +1,7 @@
 # Final Project: 
 Final Project Game by Group 5.
 
-This project will collect and reflect the various knowledge and skills I have acquired so far in 315 Game Programming to create a complete and functioning game.
+This project will collect and reflect the various knowledge and skills we have acquired so far in 315 Game Programming to create a complete and functioning game.
 
 ### Controls:
 Arrow Keys & wasd => Directional Controls
@@ -12,18 +12,18 @@ r => reset level
 
 q => quit to menu
 
-TAKE OUT THOSE BATS!!!!!!
+Find the treasure!
 
 
 ## Project Report
 
 Reflection:
 
-For this iteration, our team displayed great communication skills and cooperation. We were able to meet most of our goals to create a cohesive product for this iteration. Our project currently meets the basic functionality which we envisioned during planning.
+For this iteration, our team displayed great communication skills and cooperation. We were able to meet all of our goals to create a cohesive product for this iteration. Our project currently meets the basic functionality which we envisioned during planning.
 
-One of the issues that arose came from a planned issue featuring difficulty as a physical object in the game. This idea is 'unique' and 'interesting', but ultimately serves no purpose other than adding flavor to our game to separate it from genre norms. This idea stemmed from a group members involvement in a game design course, rather than practical ideas relating to this course. The nature of this idea created a much larger amount of work than anticipated, and as such we were unable to fully implement it in this iteration. As a group we collectively decided to push it back into the worklog, and hope to possibly implement it in a future iteration, but we may even decide to drop it from the project entirely, depending on where we want to take this project in future iterations.
+Some of the things we struggled on, were issues with using git and github for file management. This is just from lack of experience on our end, but we overcame this as a group. There were other small issues, which were resolved with paired programming, and references from online resources. There were no serious or gamebreaking issues that arose this iteration.
 
-Another issue that our team experienced was multiple people working on a specific scene at one time. The resulting merge conflicts created a large blockage in workflow which needs to be fixed. For this next iteration, we will implement a better communication system to ensure that we do not encounter these conflicts.
+On a sucesful note, we didnt have any serious merge conflicts throughout our time on the project. We would like to think this is due to our new paired programmning policy.
 
 Self Evaluation:
 - [X] D-1: The repository link is submitted to Canvas before the project deadline.
@@ -49,7 +49,7 @@ Self Evaluation:
 - [ ] ⭐ Support two of the following: touch input, mouse/keyboard input, and gamepad input
 - [ ] ⭐ Allow the user to control the volume of music and sound effects independently.
 - [ ] ⭐ Incorporate juiciness and document it in the <code>README.md</code>
-- [ ] ⭐ Use particle effects
+- [x] ⭐ Use particle effects
 - [ ] ⭐ Use different layers and masks to manage collisions and document this in the <code>README.md</code>
 - [X] ⭐ Incorporate pop into your HUD or title screen using <code>Tween</code> or <code>AnimationPlayer</code>
 - [X] ⭐ Include an AI-controlled character
