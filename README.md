@@ -23,7 +23,7 @@ For this iteration, our team displayed great communication skills and cooperatio
 
 Some of the things we struggled on, were issues with using git and github for file management. This is just from lack of experience on our end, but we overcame this as a group. There were other small issues, which were resolved with paired programming, and references from online resources. There were no serious or gamebreaking issues that arose this iteration.
 
-On a sucesful note, we didnt have any serious merge conflicts throughout our time on the project. We would like to think this is due to our new paired programmning policy.
+On a successful note, we didnt have any serious merge conflicts throughout our time on the project. We would like to think this is due to our new paired programmning policy.
 
 Self Evaluation:
 - [X] D-1: The repository link is submitted to Canvas before the project deadline.
