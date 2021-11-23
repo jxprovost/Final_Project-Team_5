@@ -569,6 +569,8 @@ angle = 360.0
 angle_random = 1.0
 color_ramp = SubResource( 37 )
 
+[node name="BurningSound" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="HitboxPivot/SwordHitbox"]
