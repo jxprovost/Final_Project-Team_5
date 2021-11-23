@@ -3,27 +3,25 @@ extends Node2D
 
 signal solved
 
-#var crystal_0 = get_tree().get_nodes_in_group("ColoredCrystalPodium0")
-#var crystal_1 = get_tree().get_root().get_node("World").get_node("YSort").get_node("ColoredCrystalPodium1")
-#var crystal_2 = get_tree().get_root().get_node("World").get_node("YSort").get_node("ColoredCrystalPodium2")
-#var crystal_3 = get_tree().get_root().get_node("World").get_node("YSort").get_node("ColoredCrystalPodium3")
+#var colorPatternButtonSpawn = get_tree().get_root().get_node("World").get_node("ColorPatternButtonSpawn")
+#var colorPatternPodiumSpawn = get_tree().get_root().get_node("World").get_node("ColorPatternPodiumSpawn")
 
 const _button_colors := [Color.red, Color.green, Color.blue, Color.yellow]
 
 var _base_combination = []
 var _input_combination = []
-
+var _solved = false
 
 func _ready():
-	$RedButton.initialize(_button_colors[0])
-	$GreenButton.initialize(_button_colors[1])
-	$BlueButton.initialize(_button_colors[2])
-	$YellowButton.initialize(_button_colors[3])
+	$Buttons/RedButton.initialize(_button_colors[0])
+	$Buttons/GreenButton.initialize(_button_colors[1])
+	$Buttons/BlueButton.initialize(_button_colors[2])
+	$Buttons/YellowButton.initialize(_button_colors[3])
 	randomizeCombination()
-	#crystal_0.initialize(_base_combination[0])
-	#crystal_1.initialize(_base_combination[1])
-	#crystal_2.initialize(_base_combination[2])
-	#crystal_3.initialize(_base_combination[3])
+	$Podiums/ColoredCrystalPodium0.initialize(_base_combination[0])
+	$Podiums/ColoredCrystalPodium1.initialize(_base_combination[1])
+	$Podiums/ColoredCrystalPodium2.initialize(_base_combination[2])
+	$Podiums/ColoredCrystalPodium3.initialize(_base_combination[3])
 
 func randomizeCombination():
 	var _rng = RandomNumberGenerator.new()
@@ -49,24 +47,26 @@ func _is_combination_successful():
 
 
 func _on_Timeout_timeout():
-	_fail()
+	if _solved == false:
+		_fail()
 
 
 func _fail():
 	_input_combination = []
-	$RedButton.fail()
-	$GreenButton.fail()
-	$BlueButton.fail()
-	$YellowButton.fail()
+	$Buttons/RedButton.fail()
+	$Buttons/GreenButton.fail()
+	$Buttons/BlueButton.fail()
+	$Buttons/YellowButton.fail()
 	$FailSoundPlayer.play()
 	$Timeout.stop()
 
 
 func _success():
 	emit_signal("solved")
-	$RedButton.lock()
-	$GreenButton.lock()
-	$BlueButton.lock()
-	$YellowButton.lock()
+	$Buttons/RedButton.lock()
+	$Buttons/GreenButton.lock()
+	$Buttons/BlueButton.lock()
+	$Buttons/YellowButton.lock()
 	$Timeout.stop()
+	_solved = true
 	print("PUZZLE SOLVED!")
