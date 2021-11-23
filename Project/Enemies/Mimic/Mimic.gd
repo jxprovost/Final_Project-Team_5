@@ -18,17 +18,14 @@ const _FRICTION := 200
 const _KNOCKBACK_FORCE := 100
 
 var _mimic_awareness = "sleeping"
-var activation := 0
 var _velocity := Vector2.ZERO
 var _knockback := Vector2.ZERO
-
 var _state = State.INACTIVE
-var awakened := 0
 
 
 func _ready():
 	$AnimatedSprite.play("chest")
-	#$PlayerDetection/CollisionShape2D.disabled = true
+
 
 func _physics_process(delta):
 	_knockback = _knockback.move_toward(Vector2.ZERO, _FRICTION * delta)
@@ -36,8 +33,6 @@ func _physics_process(delta):
 	
 	if _mimic_awareness != "sleeping":
 		match _state:
-			# Chasing Player
-				# HOW CAN I MAKE IT LOOK AS IF THE MIMIC IS DRAGGING ITSELF ACROSS THE FLOOR? # I COULD SIMPLY MAKE IT SWAY A BIT
 			State.ACTIVE: 
 				$PlayerDetectionZone/CollisionShape2D.scale.x = 2
 				$PlayerDetectionZone/CollisionShape2D.scale.y = 2
@@ -51,7 +46,6 @@ func _physics_process(delta):
 				if player != null:
 					var direction = (player.global_position - global_position).normalized()
 					_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta)
-
 				else:
 					_state = State.INACTIVE
 
@@ -84,10 +78,11 @@ func _physics_process(delta):
 				seek_player()
 		_velocity = move_and_slide(_velocity)
 		
-func seek_player(): # Currently Deactivated (Activated once hit by player)
+		
+func seek_player(): 
 	if $PlayerDetectionZone.can_see_player():
-		activation = 0
 		_state = State.ACTIVE
+		
 		
 func _on_Hurtbox_area_entered(hitbox):
 	$Stats.health -= hitbox.damage
@@ -100,12 +95,14 @@ func _on_Hurtbox_area_entered(hitbox):
 	else: 
 		_state = State.HIT
 		
+		
 func _on_Stats_no_health(): 
 	emit_signal("mimic_defeated")
 	queue_free()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+	
 	
 func _on_AttackArea_body_entered(_body):
 	_state = State.ATTACK
