@@ -84,6 +84,6 @@ func attack_animation_finished():
 
 func _on_Hurtbox_area_entered(area):
 	$Hit.play()
-	stats.health -= 1
+	stats.health -= area.damage
 	_hurtbox.start_invincibility(1)
 	_hurtbox.create_hit_effect(area)
