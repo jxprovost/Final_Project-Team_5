@@ -1,6 +1,7 @@
 extends Node2D
 
 var bats_defeated := 0
+var bat_quest_complete = false
 
 
 func _process(_delta):
@@ -11,7 +12,8 @@ func _process(_delta):
 		quit_level()
 		
 	if bats_defeated == 8:
-		complete_bat_quest()
+		if bat_quest_complete == false:
+			complete_bat_quest()
 
 
 func reset_level():
@@ -23,13 +25,16 @@ func quit_level():
 
 
 func complete_bat_quest():
+	bat_quest_complete = true
+	$YSort/Player.queue_free()
 	$Camera2D/Control/Win.visible = true
 	$Camera2D/Control/Menu.visible = true
 
 
 func _on_Player_tree_exited():
-	$Camera2D/Control/Loss.visible = true
-	$Camera2D/Control/Menu.visible = true
+	if bat_quest_complete == false:
+		$Camera2D/Control/Loss.visible = true
+		$Camera2D/Control/Menu.visible = true
 
 
 func _on_Bat_bat_defeated():
