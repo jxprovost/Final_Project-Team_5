@@ -2,7 +2,7 @@ extends Node2D
 
 
 export var automatic := false
-export var automaticTime := 0.0
+export var automaticTime := 1.0
 
 
 var _activated = false
