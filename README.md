@@ -79,3 +79,5 @@ We believe that this project has earned a grade of A in accordance with the requ
 - hit.wav "Hit". Created by Max Braun
 
 - BackgroundMusic.mp3 "BackgroundMusic" by Jaren Provost
+
+- burning.wav "BurningSound". Created by InspectorJ (https://freesound.org/people/InspectorJ/sounds/398808/) CC0 1.0 Universal, and JasonElrod (https://freesound.org/people/JasonElrod/sounds/85468/) CC0 1.0 Universal, combined and edited by Max Braun
