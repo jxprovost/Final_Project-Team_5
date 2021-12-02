@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/puzzle_fail.wav-576bacdd37b539bb0a64c9f8121cef29.sample"
+
+[deps]
+
+source_file="res://World/DF1/Interactive/ColorPatternPuzzle/puzzle_fail.wav"
+dest_files=[ "res://.import/puzzle_fail.wav-576bacdd37b539bb0a64c9f8121cef29.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

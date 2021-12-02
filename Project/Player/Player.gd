@@ -29,7 +29,7 @@ onready var _animationState = _animationTree.get("parameters/playback")
 
 
 func _ready():
-	self.health = max_health
+	self.set_max_health(self.max_health)
 	self.set_health(self.max_health)
 # warning-ignore:return_value_discarded
 	self.connect("no_health", self, "queue_free")

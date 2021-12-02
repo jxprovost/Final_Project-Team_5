@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World/DF1/Interactive/ColorPatternPuzzle/ColorPatternPuzzle.gd" type="Script" id=1]
+[ext_resource path="res://World/DF1/Interactive/ColorPatternPuzzle/ColoredButton/ColoredButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/DF1/Interactive/ColorPatternPuzzle/puzzle_fail.wav" type="AudioStream" id=3]
+[ext_resource path="res://World/DF1/Interactive/ColorPatternPuzzle/ColoredCrystalPodium/ColoredCrystalPodium.tscn" type="PackedScene" id=4]
+
+[node name="ColorPatternPuzzle" type="Node2D"]
+scale = Vector2( 0.6, 0.6 )
+script = ExtResource( 1 )
+
+[node name="Timeout" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="FailSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Buttons" type="Node2D" parent="."]
+position = Vector2( 0, 35 )
+
+[node name="RedButton" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( -90, 0 )
+
+[node name="YellowButton" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 90, 0 )
+
+[node name="BlueButton" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( 30, 0 )
+
+[node name="GreenButton" parent="Buttons" instance=ExtResource( 2 )]
+position = Vector2( -30, 0 )
+
+[node name="Podiums" type="Node2D" parent="."]
+position = Vector2( 0, -35 )
+
+[node name="ColoredCrystalPodium0" parent="Podiums" instance=ExtResource( 4 )]
+position = Vector2( -75, 0 )
+
+[node name="ColoredCrystalPodium1" parent="Podiums" instance=ExtResource( 4 )]
+position = Vector2( -30, 0 )
+
+[node name="ColoredCrystalPodium2" parent="Podiums" instance=ExtResource( 4 )]
+position = Vector2( 30, 0 )
+
+[node name="ColoredCrystalPodium3" parent="Podiums" instance=ExtResource( 4 )]
+position = Vector2( 75, 0 )
+
+[connection signal="timeout" from="Timeout" to="." method="_on_Timeout_timeout"]
+[connection signal="pressed" from="Buttons/RedButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Buttons/YellowButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Buttons/BlueButton" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Buttons/GreenButton" to="." method="_on_Button_pressed"]
