@@ -3,9 +3,9 @@
 [ext_resource path="res://Enemies/Mimic/mimic_sprite_sheet.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Mimic/Mimic.gd" type="Script" id=2]
 [ext_resource path="res://Enemies/Mimic/AttackArea.gd" type="Script" id=3]
-[ext_resource path="res://Modular_Assets/Hurtbox.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Modular_Assets/PlayerDetectionZone.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Modular_Assets/Hitbox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Common/Hurtbox.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Common/PlayerDetectionZone.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Common/Hitbox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Stats/Stats.tscn" type="PackedScene" id=7]
 
 [sub_resource type="AtlasTexture" id=1]

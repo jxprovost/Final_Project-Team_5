@@ -1,5 +1,9 @@
 extends KinematicBody2D
 
+signal no_health
+signal health_changed(value)
+signal max_health_changed(value)
+
 enum State {
 	MOVE,
 	ROLL,
@@ -10,7 +14,8 @@ const _ACCELERATION := 400
 const _FRICTION := 400
 const _MAX_SPEED := 100
 
-var stats = PlayerStats
+export(int) var max_health := 1 setget set_max_health
+var health := max_health setget set_health
 var _state = State.MOVE
 var _knockback_vector := Vector2.DOWN
 var _velocity := Vector2.ZERO
@@ -24,8 +29,10 @@ onready var _animationState = _animationTree.get("parameters/playback")
 
 
 func _ready():
-	stats.set_health(stats.max_health)
-	stats.connect("no_health", self, "queue_free")
+	self.health = max_health
+	self.set_health(self.max_health)
+# warning-ignore:return_value_discarded
+	self.connect("no_health", self, "queue_free")
 	_animationTree.active = true
 	_swordHitbox.knockback_vector = _knockback_vector
 
@@ -82,6 +89,20 @@ func attack_animation_finished():
 
 func _on_Hurtbox_area_entered(area):
 	$Hit.play()
-	stats.health -= area.damage
+	self.health -= area.damage
 	_hurtbox.start_invincibility(1)
 	_hurtbox.create_hit_effect(area)
+
+
+func set_max_health(value):
+	max_health = value
+# warning-ignore:narrowing_conversion
+	self.health = min(health, max_health)
+	emit_signal("max_health_changed", max_health)
+
+
+func set_health(value):
+	health = value
+	emit_signal("health_changed", health)
+	if health <= 0:
+		emit_signal("no_health")
