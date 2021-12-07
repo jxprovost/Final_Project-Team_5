@@ -13,7 +13,7 @@ enum State {
 const EnemyDeathEffect := preload("res://Effects/EnemyDeathEffect.tscn")
 
 const _ACCELERATION := 100
-const _MAX_SPEED := 20
+const _MAX_SPEED := 30
 const _FRICTION := 200
 const _KNOCKBACK_FORCE := 100
 
@@ -21,10 +21,14 @@ var _mimic_awareness := "sleeping"
 var _velocity := Vector2.ZERO
 var _knockback := Vector2.ZERO
 var _state = State.INACTIVE
+var _size = 1
 
 
 func _ready():
 	$AnimatedSprite.play("chest")
+	$Hitbox.monitoring = false
+	scale.x = 1
+	scale.y = 1
 
 
 func _physics_process(delta):
@@ -34,13 +38,18 @@ func _physics_process(delta):
 	if _mimic_awareness != "sleeping":
 		match _state:
 			State.ACTIVE: 
+				if (_size == 1):
+					$SizeChange.play("SizeIncrease")
+					_size = 2
+					
 				$PlayerDetectionZone/CollisionShape2D.scale.x = 2
 				$PlayerDetectionZone/CollisionShape2D.scale.y = 2
-				
 				if $AnimatedSprite.animation == "chest":
 					$AnimatedSprite.play("awaken")
+					$Hitbox.monitoring = true
+					
 				else:
-					$AnimatedSprite.animation = "blink"
+					$AnimatedSprite.animation = "blink"	
 					
 				var player = $PlayerDetectionZone.player
 				if player != null:
@@ -48,10 +57,17 @@ func _physics_process(delta):
 					_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta)
 				else:
 					_state = State.INACTIVE
-
+					
 				$AnimatedSprite.flip_h = _velocity.x > 0
 				
 			State.ATTACK:
+				var player = $PlayerDetectionZone.player
+				if player != null:
+					if ($Timer.time_left == 0):
+						var direction = (player.global_position - global_position).normalized()
+						_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta * 2)
+						$Timer.start()
+							
 				$Hurtbox/CollisionShape2D.scale.x = 2
 				$Hurtbox/CollisionShape2D.scale.y = 2
 				$AnimatedSprite.animation = "attack" 
@@ -60,22 +76,31 @@ func _physics_process(delta):
 					$Hurtbox/CollisionShape2D.scale.x = 1
 					$Hurtbox/CollisionShape2D.scale.y = 1
 					
+				# 1 sec timer
+				# vector impulse
+					
 			State.HIT:
 				$AnimatedSprite.animation = "takeHit"
 				if $AnimatedSprite.animation == "takeHit" and $AnimatedSprite.frame == 12:
 					_state = State.ACTIVE
 				
 			State.INACTIVE:
+				
+				if (_size == 2):
+					$SizeChange.play("SizeDecrease")
+					_size = 1
+					
 				if $AnimatedSprite.animation != "chest":
 					$AnimatedSprite.animation = "hide"
+					$Hitbox.monitoring = false
 					
 				if $AnimatedSprite.animation == "hide" and $AnimatedSprite.frame == 8:
 					$AnimatedSprite.animation = "chest"
 					
 				$PlayerDetectionZone/CollisionShape2D.scale.x = 0.75
 				$PlayerDetectionZone/CollisionShape2D.scale.y = 0.75
-				_velocity = _velocity.move_toward(Vector2.ZERO, _FRICTION * delta)
-				seek_player()
+				# _velocity = _velocity.move_toward(Vector2.ZERO, _FRICTION * delta)
+				# seek_player()
 		_velocity = move_and_slide(_velocity)
 		
 		
