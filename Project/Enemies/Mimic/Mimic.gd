@@ -14,8 +14,8 @@ const EnemyDeathEffect := preload("res://Effects/EnemyDeathEffect.tscn")
 
 const _ACCELERATION := 100
 const _MAX_SPEED := 30
-const _FRICTION := 200
-const _KNOCKBACK_FORCE := 100
+const _FRICTION := 500
+const _KNOCKBACK_FORCE := 20
 
 var _mimic_awareness := "sleeping"
 var _velocity := Vector2.ZERO
@@ -26,11 +26,11 @@ var _size = 1
 
 func _ready():
 	$AnimatedSprite.play("chest")
-	$Hitbox.monitoring = false
+	$Hitbox/CollisionShape2D.disabled = true
 	scale.x = 1
 	scale.y = 1
-
-
+	
+	
 func _physics_process(delta):
 	_knockback = _knockback.move_toward(Vector2.ZERO, _FRICTION * delta)
 	_knockback = move_and_slide(_knockback)
@@ -38,6 +38,7 @@ func _physics_process(delta):
 	if _mimic_awareness != "sleeping":
 		match _state:
 			State.ACTIVE: 
+				
 				if (_size == 1):
 					$SizeChange.play("SizeIncrease")
 					_size = 2
@@ -49,35 +50,37 @@ func _physics_process(delta):
 					$Hitbox.monitoring = true
 					
 				else:
-					$AnimatedSprite.animation = "blink"	
+					$AnimatedSprite.animation = "blink"
+					$Hitbox/CollisionShape2D.disabled = false
 					
 				var player = $PlayerDetectionZone.player
+				var player2 = $AttackArea.player
 				if player != null:
 					var direction = (player.global_position - global_position).normalized()
 					_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta)
 				else:
 					_state = State.INACTIVE
 					
+				if player2 != null:
+					_state = State.ATTACK
+					
 				$AnimatedSprite.flip_h = _velocity.x > 0
 				
 			State.ATTACK:
 				var player = $PlayerDetectionZone.player
-				if player != null:
-					if ($Timer.time_left == 0):
-						var direction = (player.global_position - global_position).normalized()
-						_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta * 2)
-						$Timer.start()
+				var player2 = $AttackArea.player
+				if player != null and player2 != null:
+
+					var direction = (player.global_position - global_position).normalized()
+					_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta * 2)
 							
-				$Hurtbox/CollisionShape2D.scale.x = 2
-				$Hurtbox/CollisionShape2D.scale.y = 2
-				$AnimatedSprite.animation = "attack" 
+				if $AnimatedSprite.animation != "attack":
+					$AnimatedSprite.animation = "attack" 
+					
 				if $AnimatedSprite.frame == 9:
 					_state = State.ACTIVE
-					$Hurtbox/CollisionShape2D.scale.x = 1
-					$Hurtbox/CollisionShape2D.scale.y = 1
-					
-				# 1 sec timer
-				# vector impulse
+# warning-ignore:return_value_discarded
+				move_and_slide(_velocity)  
 					
 			State.HIT:
 				$AnimatedSprite.animation = "takeHit"
@@ -85,28 +88,22 @@ func _physics_process(delta):
 					_state = State.ACTIVE
 				
 			State.INACTIVE:
-				
+				$Hitbox/CollisionShape2D.disabled = true
+				_velocity = Vector2.ZERO
 				if (_size == 2):
 					$SizeChange.play("SizeDecrease")
 					_size = 1
 					
 				if $AnimatedSprite.animation != "chest":
 					$AnimatedSprite.animation = "hide"
-					$Hitbox.monitoring = false
 					
 				if $AnimatedSprite.animation == "hide" and $AnimatedSprite.frame == 8:
 					$AnimatedSprite.animation = "chest"
 					
 				$PlayerDetectionZone/CollisionShape2D.scale.x = 0.75
 				$PlayerDetectionZone/CollisionShape2D.scale.y = 0.75
-				# _velocity = _velocity.move_toward(Vector2.ZERO, _FRICTION * delta)
-				# seek_player()
+
 		_velocity = move_and_slide(_velocity)
-		
-		
-func seek_player(): 
-	if $PlayerDetectionZone.can_see_player():
-		_state = State.ACTIVE
 		
 		
 func _on_Hurtbox_area_entered(hitbox):
@@ -131,3 +128,12 @@ func _on_Stats_no_health():
 	
 func _on_AttackArea_body_entered(_body):
 	_state = State.ATTACK
+
+
+func _on_Timer_timeout():
+	$AttackArea/CollisionShape2D.disabled = true
+	$Timer2.start()
+
+
+func _on_Timer2_timeout():
+	$AttackArea/CollisionShape2D.disabled = false

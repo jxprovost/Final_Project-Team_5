@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Enemies/Mimic/mimic_sprite_sheet.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/Mimic/Mimic.gd" type="Script" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Common/PlayerDetectionZone.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Common/Hitbox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Common/Stats.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Shadows/small_shadow.png" type="Texture" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -86,87 +87,87 @@ region = Rect2( 5280, 480, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
-region = Rect2( 3360, 480, 480, 480 )
+region = Rect2( 0, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 1 )
-region = Rect2( 4320, 480, 480, 480 )
+region = Rect2( 480, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
-region = Rect2( 4800, 480, 480, 480 )
+region = Rect2( 960, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 1 )
-region = Rect2( 5280, 480, 480, 480 )
+region = Rect2( 1440, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 480, 480 )
+region = Rect2( 1920, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 1 )
-region = Rect2( 480, 0, 480, 480 )
+region = Rect2( 2400, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 1 )
-region = Rect2( 960, 0, 480, 480 )
+region = Rect2( 2880, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 1 )
-region = Rect2( 1440, 0, 480, 480 )
+region = Rect2( 3360, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 1 )
-region = Rect2( 1920, 0, 480, 480 )
+region = Rect2( 3840, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 1 )
-region = Rect2( 2400, 0, 480, 480 )
+region = Rect2( 4320, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 1 )
-region = Rect2( 2880, 0, 480, 480 )
+region = Rect2( 3360, 480, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 1 )
-region = Rect2( 3360, 0, 480, 480 )
+region = Rect2( 4320, 480, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 1 )
-region = Rect2( 3840, 0, 480, 480 )
+region = Rect2( 4800, 480, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 1 )
-region = Rect2( 4320, 0, 480, 480 )
+region = Rect2( 5280, 480, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 1 )
-region = Rect2( 4320, 0, 480, 480 )
+region = Rect2( 0, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 1 )
-region = Rect2( 4800, 0, 480, 480 )
+region = Rect2( 4320, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 1 )
-region = Rect2( 5280, 0, 480, 480 )
+region = Rect2( 4800, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 1 )
-region = Rect2( 5760, 0, 480, 480 )
+region = Rect2( 5280, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 480, 480, 480 )
+region = Rect2( 5760, 0, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 1 )
-region = Rect2( 480, 480, 480, 480 )
+region = Rect2( 0, 480, 480, 480 )
 
 [sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 480, 480 )
+region = Rect2( 480, 480, 480, 480 )
 
 [sub_resource type="SpriteFrames" id=41]
 animations = [ {
@@ -180,31 +181,31 @@ animations = [ {
 "name": "attack",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ), SubResource( 23 ) ],
-"loop": false,
-"name": "takeHit",
-"speed": 50.0
-}, {
-"frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ) ],
 "loop": false,
 "name": "awaken",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ), SubResource( 34 ) ],
-"loop": true,
-"name": "blink",
-"speed": 10.0
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ), SubResource( 33 ) ],
+"loop": false,
+"name": "takeHit",
+"speed": 50.0
 }, {
-"frames": [ SubResource( 40 ) ],
+"frames": [ SubResource( 34 ) ],
 "loop": true,
 "name": "chest",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ), SubResource( 35 ) ],
+"loop": true,
+"name": "blink",
 "speed": 10.0
 } ]
 
 [sub_resource type="CircleShape2D" id=42]
 radius = 5.65098
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=49]
 resource_name = "SizeDecrease"
 length = 2.0
 tracks/0/type = "value"
@@ -220,7 +221,7 @@ tracks/0/keys = {
 "values": [ Vector2( 2, 2 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=50]
 resource_name = "SizeIncrease"
 length = 4.0
 tracks/0/type = "value"
@@ -236,69 +237,79 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
 }
 
-[sub_resource type="CircleShape2D" id=43]
-radius = 16.8842
+[sub_resource type="CircleShape2D" id=51]
+radius = 24.2241
 
-[sub_resource type="CircleShape2D" id=44]
+[sub_resource type="CircleShape2D" id=52]
 radius = 72.5514
 
-[sub_resource type="CircleShape2D" id=45]
+[sub_resource type="CircleShape2D" id=47]
 radius = 8.76779
 
-[sub_resource type="CircleShape2D" id=46]
+[sub_resource type="CircleShape2D" id=48]
 radius = 5.91503
 
 [node name="Mimic" type="KinematicBody2D"]
-scale = Vector2( 1.525, 1.525 )
+scale = Vector2( 2, 2 )
 script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.276047, 3.74635 )
+scale = Vector2( 1.30069, 1.07394 )
+texture = ExtResource( 8 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 41 )
-animation = "takeHit"
+animation = "attack"
+frame = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 shape = SubResource( 42 )
 
 [node name="SizeChange" type="AnimationPlayer" parent="."]
-anims/SizeDecrease = SubResource( 47 )
-anims/SizeIncrease = SubResource( 48 )
+anims/SizeDecrease = SubResource( 49 )
+anims/SizeIncrease = SubResource( 50 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
+
+[node name="Timer2" type="Timer" parent="."]
 
 [node name="Stats" parent="." instance=ExtResource( 7 )]
 max_health = 8
 
 [node name="AttackArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-shape = SubResource( 43 )
+shape = SubResource( 51 )
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 5 )]
 visible = false
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
-shape = SubResource( 44 )
+shape = SubResource( 52 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 6 )]
 visible = false
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-shape = SubResource( 45 )
+shape = SubResource( 47 )
+disabled = true
 
 [node name="Hurtbox" parent="." instance=ExtResource( 4 )]
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-shape = SubResource( 46 )
+shape = SubResource( 48 )
 
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="body_entered" from="AttackArea" to="." method="_on_AttackArea_body_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
