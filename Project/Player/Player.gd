@@ -13,12 +13,14 @@ enum State {
 const _ACCELERATION := 400
 const _FRICTION := 400
 const _MAX_SPEED := 100
+const _ROLL_SPEED := 120
 
 export(int) var max_health := 1 setget set_max_health
 var health := max_health setget set_health
 var _state = State.MOVE
 var _knockback_vector := Vector2.DOWN
 var _velocity := Vector2.ZERO
+var _roll_vector := Vector2.DOWN
 var footsteps_playing = false
 
 onready var _swordHitbox := $HitboxPivot/SwordHitbox
@@ -44,6 +46,9 @@ func _physics_process(delta):
 			
 		State.ATTACK:
 			attack_state(delta)
+			
+		State.ROLL:
+			roll_state(delta)
 
 
 func move_state(delta):
@@ -53,12 +58,14 @@ func move_state(delta):
 	input_vector = input_vector.normalized()
 	
 	if input_vector != Vector2.ZERO:
+		_roll_vector = input_vector
 		if $Footsteps.playing == false:
 			$Footsteps.playing = true
 		_swordHitbox.knockback_vector = input_vector
 		_animationTree.set("parameters/Idle/blend_position", input_vector)
 		_animationTree.set("parameters/Run/blend_position", input_vector)
 		_animationTree.set("parameters/Attack/blend_position", input_vector)
+		_animationTree.set("parameters/Roll/blend_position", input_vector)
 		_animationState.travel("Run")
 		_velocity = _velocity.move_toward(input_vector * _MAX_SPEED, _ACCELERATION * delta)
 	else:
@@ -69,13 +76,18 @@ func move_state(delta):
 	
 	move()
 	
+	if Input.is_action_just_pressed("roll"):
+		_state = State.ROLL
+	
 	if Input.is_action_just_pressed("attack"):
 		$SwordSwoosh.play()
 		_state = State.ATTACK
 
 
-func move():
-	_velocity = move_and_slide(_velocity)	
+func roll_state(_delta):
+	_velocity = _roll_vector * _ROLL_SPEED
+	_animationState.travel("Roll")
+	move()
 
 
 func attack_state(_delta):
@@ -83,7 +95,16 @@ func attack_state(_delta):
 	_animationState.travel("Attack")
 
 
+func move():
+	_velocity = move_and_slide(_velocity)	
+
+
 func attack_animation_finished():
+	_velocity = Vector2.ZERO
+	_state = State.MOVE
+
+
+func roll_animation_finished():
 	_state = State.MOVE
 
 
