@@ -46,9 +46,11 @@ Self Evaluation:
 - [ ] ⭐ Incorporate smooth transitions between title, game, and end states, rather than jumping between states via <code>change_scene</code>
 - [ ] ⭐ Support two of the following: touch input, mouse/keyboard input, and gamepad input
 - [ ] ⭐ Allow the user to control the volume of music and sound effects independently.
-- [ ] ⭐ Incorporate juiciness and document it in the <code>README.md</code>
+- [x] ⭐ Incorporate juiciness and document it in the <code>README.md</code>
+  Juiciness was incorporated through many audio files, animations, lighting systems, reactive environment object, etc.
 - [x] ⭐ Use particle effects
-- [ ] ⭐ Use different layers and masks to manage collisions and document this in the <code>README.md</code>
+- [x] ⭐ Use different layers and masks to manage collisions and document this in the <code>README.md</code>
+  Layers are used to manage many things, including entity collisions, lighting systems, visual layering, etc... 
 - [X] ⭐ Incorporate pop into your HUD or title screen using <code>Tween</code> or <code>AnimationPlayer</code>
 - [X] ⭐ Include an AI-controlled character
 - [ ] ⭐ Add a pause menu that includes, at minimum, the ability to resume or return to the main menu
