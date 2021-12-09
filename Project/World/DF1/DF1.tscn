@@ -589,6 +589,9 @@ position = Vector2( -1713.48, -1303.32 )
 [node name="FloatingEye4" parent="YSort/Enemies" instance=ExtResource( 36 )]
 position = Vector2( -1690.35, -1324.83 )
 
+[node name="FlamingSkull" parent="YSort/Enemies" instance=ExtResource( 39 )]
+position = Vector2( -588.044, -3418.7 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 160, 88.9989 )
 current = true
@@ -662,17 +665,14 @@ position = Vector2( -857.5, 145 )
 [node name="TeleportPosition" parent="InstantTeleporter" index="1"]
 position = Vector2( 161, 0 )
 
-[node name="FlamingSkull" parent="." instance=ExtResource( 39 )]
-position = Vector2( 155.612, -3003.73 )
-
 [connection signal="complete_barrel_puzzle" from="." to="YSort/Environment/Door2" method="open_door"]
 [connection signal="solved" from="ColorPatternPuzzle" to="YSort/Environment/Door" method="open_door"]
 [connection signal="health_changed" from="YSort/Player" to="InterfaceLayer/Interface" method="_on_Player_health_changed"]
 [connection signal="max_health_changed" from="YSort/Player" to="InterfaceLayer/Interface" method="_on_Player_max_health_changed"]
 [connection signal="tree_exited" from="YSort/Player" to="." method="_on_Player_tree_exited"]
-[connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Environment/HealHeart" method="_on_HealHeart_body_entered"]
 [connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Player" method="_on_HealHeart_body_entered"]
-[connection signal="mimic_defeated" from="YSort/Enemies/Mimic" to="." method="_on_Mimic_defeated"]
+[connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Environment/HealHeart" method="_on_HealHeart_body_entered"]
+[connection signal="skull_defeated" from="YSort/Enemies/FlamingSkull" to="." method="_on_FlamingSkull_skull_defeated"]
 [connection signal="pressed" from="Camera2D/Control/Menu" to="." method="_on_Menu_pressed"]
 
 [editable path="LavaCollider"]

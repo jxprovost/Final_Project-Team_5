@@ -2,8 +2,8 @@ extends Node2D
 
 signal complete_barrel_puzzle
 
-var mimic_quest_completed := false
-var mimic_defeated := false
+var skull_quest_completed := false
+var skull_defeated := false
 var barrel_quest_complete := false
 var _barrels_destroyed := 0
 
@@ -23,8 +23,8 @@ func _process(_delta):
 	if Input.is_action_pressed("quit"):
 		quit_level()
 		
-	if mimic_defeated:
-		if mimic_quest_completed == false:
+	if skull_defeated:
+		if skull_quest_completed == false:
 			complete_mimic_quest()
 	
 	if _barrels_destroyed >= 20:
@@ -43,20 +43,16 @@ func quit_level():
 
 
 func complete_mimic_quest():
-	mimic_quest_completed = true
+	skull_quest_completed = true
 	$YSort/Player.queue_free()
 	$Camera2D/Control/Win.visible = true
 	$Camera2D/Control/Menu.visible = true
 
 
 func _on_Player_tree_exited():
-	if mimic_defeated == false:
+	if skull_defeated == false:
 		$Camera2D/Control/Loss.visible = true
 		$Camera2D/Control/Menu.visible = true
-
-
-func _on_Mimic_defeated():
-	mimic_defeated = true
 
 
 func _on_Menu_pressed():
@@ -65,3 +61,7 @@ func _on_Menu_pressed():
 
 func _barrel_destroyed():
 	_barrels_destroyed += 1
+
+
+func _on_FlamingSkull_skull_defeated():
+	skull_defeated = true

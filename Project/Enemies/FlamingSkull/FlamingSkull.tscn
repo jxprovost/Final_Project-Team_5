@@ -121,7 +121,6 @@ animation = "launchingProjectile"
 frame = 5
 
 [node name="Stats" parent="." instance=ExtResource( 8 )]
-max_health = 12
 
 [node name="YSort" type="YSort" parent="."]
 show_behind_parent = true
