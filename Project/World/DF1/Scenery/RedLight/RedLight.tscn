@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Shadows/light_shadow.png" type="Texture" id=1]
+
+[node name="RedLight" type="Node2D"]
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 1 )
+texture_scale = 3.0
+color = Color( 0.482353, 0.00784314, 0.00784314, 1 )
+energy = 2.0

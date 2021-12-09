@@ -1,12 +1,17 @@
 extends Area2D
 
 
+const particlesPerUnit := 0.1
+
+
 func _ready():
-	var lava_size_x : int = $Sprite.region_rect.size.x / 2
-	var lava_size_y : int = $Sprite.region_rect.size.y / 2
+	var lava_size_x : int = $LavaShape.shape.extents.x - 1
+	var lava_size_y : int = $LavaShape.shape.extents.y - 1
+	var area : int = lava_size_x * lava_size_y
+	var particleAmount := area * particlesPerUnit
+	$CPUParticles2D.amount = particleAmount
 	$CPUParticles2D.emission_rect_extents = Vector2(lava_size_x, lava_size_y)
 	$Hitbox/CollisionShape2D.shape.extents = Vector2(lava_size_x, lava_size_y)
-	$CollisionShape2D.shape.extents = Vector2(lava_size_x, lava_size_y)
 
 
 func _on_Lava_body_entered(body):

@@ -41,4 +41,4 @@ func _on_Mimic_defeated():
 
 
 func _on_Menu_pressed():
-	var _ignored := get_tree().change_scene("res://World/Menu.tscn")
+	var _ignored := get_tree().change_scene("res://UI/Menu/Menu.tscn")
