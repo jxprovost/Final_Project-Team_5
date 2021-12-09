@@ -51,7 +51,7 @@ script = ExtResource( 2 )
 rotation = 3.92699
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 5 )
-frame = 4
+frame = 5
 playing = true
 flip_v = true
 
@@ -87,6 +87,9 @@ shape = SubResource( 9 )
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 position = Vector2( 3.5, 0.6 )
 shape = SubResource( 10 )
+
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
 [editable path="Hitbox"]
 [editable path="Hurtbox"]

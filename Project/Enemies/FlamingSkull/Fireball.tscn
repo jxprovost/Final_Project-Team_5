@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Enemies/FlamingSkull/Projectile_Fireball.png" type="Texture" id=1]
 [ext_resource path="res://Common/PlayerDetectionZone.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Common/Hitbox.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Enemies/FlamingSkull/Fireball.gd" type="Script" id=4]
 [ext_resource path="res://Common/Hurtbox.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Common/Stats.tscn" type="PackedScene" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -31,7 +32,7 @@ animations = [ {
 } ]
 
 [sub_resource type="CircleShape2D" id=6]
-radius = 10.7416
+radius = 80.5151
 
 [sub_resource type="Animation" id=7]
 resource_name = "FormingProjectile"
@@ -93,7 +94,7 @@ tracks/1/path = NodePath(".:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 1.8, 3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -123,7 +124,6 @@ radius = 80.7642
 radius = 81.9349
 
 [node name="Fireball" type="KinematicBody2D"]
-position = Vector2( 40.7561, 24.0723 )
 rotation = 0.000100135
 script = ExtResource( 4 )
 
@@ -139,9 +139,9 @@ hue_variation = 0.05
 hue_variation_random = 1.0
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0.399425, 0.327682 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 5 )
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -153,7 +153,9 @@ anims/FormingProjectile = SubResource( 7 )
 anims/PrepareLaunch = SubResource( 8 )
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 9.0
+wait_time = 7.0
+
+[node name="Stats" parent="." instance=ExtResource( 6 )]
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 2 )]
 
@@ -161,19 +163,22 @@ wait_time = 9.0
 shape = SubResource( 9 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 5 )]
+collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 shape = SubResource( 10 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 3 )]
+collision_mask = 4
 damage = 3
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 shape = SubResource( 11 )
 
-[node name="Position2D" type="Position2D" parent="."]
-
+[connection signal="tree_exited" from="." to="." method="_on_Fireball_tree_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_Hitbox_area_entered"]
 
 [editable path="PlayerDetectionZone"]
 [editable path="Hurtbox"]
