@@ -10,8 +10,8 @@ enum State {
 
 const _ACCELERATION := 20
 const _MAX_SPEED := 60
-const _FRICTION := 200
-const _KNOCKBACK_FORCE := 110
+const _FRICTION := 175
+const _KNOCKBACK_FORCE := 200
 
 const EnemyDeathEffect := preload("res://Effects/EnemyDeathEffect.tscn")
 
@@ -21,7 +21,6 @@ var _knockback := Vector2.ZERO
 var distancing = false
 var _fire = false
 var fireball
-
 var _state = State.INACTIVE
 
 
@@ -29,18 +28,29 @@ func _ready():
 	$AnimatedSprite.play("default")
 
 
-
 func _physics_process(delta):
 	_knockback = _knockback.move_toward(Vector2.ZERO, _FRICTION * delta)
 	_knockback = move_and_slide(_knockback)
-	
 	var play = $PlayerDetectionZone.player
 	if play != null:
 		var direction = (play.global_position - global_position).normalized()
 		_velocity_direct = _velocity_direct.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta)
 			
 	$AnimatedSprite.flip_h = _velocity_direct.x > 0
-	# reangle/position flames
+	if $AnimatedSprite.flip_h == true:
+		$YSort/CPUParticles2D.rotation_degrees = -160
+		$YSort/CPUParticles2D2.rotation_degrees = -160
+		$YSort/CPUParticles2D3.rotation_degrees = -150
+		$YSort/CPUParticles2D4.rotation_degrees = -150
+		$YSort/CPUParticles2D5.rotation_degrees = -150
+		$YSort/CPUParticles2D6.rotation_degrees = -160
+	else:
+		$YSort/CPUParticles2D.rotation_degrees = -20
+		$YSort/CPUParticles2D2.rotation_degrees = -20
+		$YSort/CPUParticles2D3.rotation_degrees = -30
+		$YSort/CPUParticles2D4.rotation_degrees = -30
+		$YSort/CPUParticles2D5.rotation_degrees = -30
+		$YSort/CPUParticles2D6.rotation_degrees = -20
 	
 	
 	match _state:
@@ -52,7 +62,6 @@ func _physics_process(delta):
 			$AnimatedSprite.play("default")
 			var player = $PlayerDetectionZone.player
 			var player2 = $DistancingZone.player
-			
 			if player != null and player2 == null:
 				var direction = (player.global_position - global_position).normalized()
 				_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta)
@@ -68,16 +77,14 @@ func _physics_process(delta):
 				var direction = (player.global_position - global_position).normalized()
 				_velocity_direct = _velocity_direct.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta)
 
-				
+
 		State.LAUNCH:
 			var player = $PlayerDetectionZone.player
 			var player2 = $DistancingZone.player
 			if $AnimatedSprite.frame == 58 and _fire == false and player == null and player2 == null:
 				_state = State.INACTIVE
-				
 			elif $AnimatedSprite.frame == 58 and _fire == false and player != null and player2 == null:
 				_state = State.CHASE
-				
 			elif $AnimatedSprite.frame == 58 and _fire == false and player != null and player2 != null:
 				_state = State.LAUNCH
 				print("fuck2")
@@ -90,10 +97,10 @@ func _physics_process(delta):
 					$Position2D.add_child(fireball)
 					fireball.get_scene_instance_load_placeholder()
 					_fire = true
+					
 			if $AnimatedSprite.frame == 58:
 				_fire = false
 				_state = State.CHASE
-			
 # warning-ignore:return_value_discarded
 	move_and_slide(_velocity)
 

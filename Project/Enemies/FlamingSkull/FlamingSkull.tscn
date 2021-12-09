@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Enemies/FlamingSkull/skull.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/FlamingSkull/DistancingZone.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Common/Hitbox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Common/Hurtbox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Common/Stats.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Shadows/light_shadow.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 288.357
@@ -85,22 +86,30 @@ animations = [ {
 offsets = PoolRealArray( 0, 0.0725076, 0.401813, 0.800604, 1, 36.5687 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.384314, 0.243137, 1, 1, 0.351563, 0, 1, 1, 0.627991, 0.101563, 1, 1, 0.890137, 0.296875, 1, 0.997192, 1, 0.640625, 1 )
 
-[sub_resource type="CircleShape2D" id=18]
-
-[sub_resource type="CircleShape2D" id=19]
-
 [sub_resource type="CircleShape2D" id=20]
-radius = 5708.86
+radius = 10002.5
 
 [sub_resource type="CircleShape2D" id=21]
 radius = 284.948
 
+[sub_resource type="CircleShape2D" id=19]
+radius = 394.009
+
+[sub_resource type="CircleShape2D" id=18]
+radius = 207.419
+
 [sub_resource type="CircleShape2D" id=22]
-radius = 2332.41
+radius = 3134.74
 
 [node name="FlamingSkull" type="KinematicBody2D"]
-scale = Vector2( 0.04, 0.04 )
+scale = Vector2( 0.07, 0.07 )
 script = ExtResource( 3 )
+
+[node name="Light2D" type="Light2D" parent="."]
+scale = Vector2( 60, 60 )
+texture = ExtResource( 9 )
+texture_scale = 4.0
+energy = 0.75
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -109,71 +118,26 @@ shape = SubResource( 1 )
 position = Vector2( -0.717385, 0 )
 frames = SubResource( 16 )
 animation = "launchingProjectile"
-frame = 11
+frame = 5
 
 [node name="Stats" parent="." instance=ExtResource( 8 )]
+max_health = 12
 
 [node name="YSort" type="YSort" parent="."]
 show_behind_parent = true
-
-[node name="CPUParticles2D3" type="CPUParticles2D" parent="YSort"]
-show_behind_parent = true
-position = Vector2( -74.7275, -238.116 )
-rotation = -0.523599
-scale = Vector2( 10, 5 )
-amount = 20
-lifetime = 0.8
-emission_shape = 3
-emission_points = PoolVector2Array(  )
-emission_colors = PoolColorArray(  )
-spread = 60.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 10.0
-initial_velocity_random = 1.0
-angular_velocity = 360.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.05
-radial_accel = 100.0
-radial_accel_random = 1.0
-scale_amount = 10.0
-scale_amount_random = 0.5
-color_ramp = SubResource( 17 )
-
-[node name="CPUParticles2D2" type="CPUParticles2D" parent="YSort"]
-show_behind_parent = true
-position = Vector2( 182.007, 80.0606 )
-rotation = -0.349066
-scale = Vector2( 10, 5 )
-amount = 20
-lifetime = 0.8
-emission_shape = 3
-emission_points = PoolVector2Array(  )
-emission_colors = PoolColorArray(  )
-spread = 60.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 10.0
-initial_velocity_random = 1.0
-angular_velocity = 360.0
-angular_velocity_random = 1.0
-orbit_velocity = 0.05
-radial_accel = 100.0
-radial_accel_random = 1.0
-scale_amount = 10.0
-scale_amount_random = 0.5
-color_ramp = SubResource( 17 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="YSort"]
 modulate = Color( 1, 0.517647, 0.14902, 1 )
 self_modulate = Color( 1, 0.211765, 0.211765, 1 )
 show_behind_parent = true
-position = Vector2( -41.2866, -175.083 )
+position = Vector2( -7.12583, -196.105 )
 rotation = -0.349066
 scale = Vector2( 10, 5 )
 amount = 100
 lifetime = 0.8
 spread = 60.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 10.0
+initial_velocity = 30.0
 initial_velocity_random = 1.0
 angular_velocity = 360.0
 angular_velocity_random = 1.0
@@ -187,34 +151,32 @@ color_ramp = SubResource( 17 )
 hue_variation = 0.1
 hue_variation_random = 1.0
 
-[node name="CPUParticles2D6" type="CPUParticles2D" parent="YSort"]
-modulate = Color( 1, 0.517647, 0.14902, 1 )
-self_modulate = Color( 1, 0.211765, 0.211765, 1 )
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="YSort"]
 show_behind_parent = true
-position = Vector2( 37.0655, -22.1097 )
+position = Vector2( 0.691925, 93.1994 )
 rotation = -0.349066
 scale = Vector2( 10, 5 )
-amount = 100
+amount = 20
 lifetime = 0.8
+emission_shape = 3
+emission_points = PoolVector2Array(  )
+emission_colors = PoolColorArray(  )
 spread = 60.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 10.0
+initial_velocity = 60.0
 initial_velocity_random = 1.0
 angular_velocity = 360.0
 angular_velocity_random = 1.0
-orbit_velocity = 0.1
-linear_accel = 60.0
+orbit_velocity = 0.05
 radial_accel = 100.0
 radial_accel_random = 1.0
 scale_amount = 10.0
 scale_amount_random = 0.5
 color_ramp = SubResource( 17 )
-hue_variation = 0.1
-hue_variation_random = 1.0
 
-[node name="CPUParticles2D4" type="CPUParticles2D" parent="YSort"]
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="YSort"]
 show_behind_parent = true
-position = Vector2( 196.162, -127.679 )
+position = Vector2( -9.03368, -285.416 )
 rotation = -0.523599
 scale = Vector2( 10, 5 )
 amount = 20
@@ -224,7 +186,30 @@ emission_points = PoolVector2Array(  )
 emission_colors = PoolColorArray(  )
 spread = 60.0
 gravity = Vector2( 0, 0 )
-initial_velocity = 20.0
+initial_velocity = 40.0
+initial_velocity_random = 1.0
+angular_velocity = 360.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.05
+radial_accel = 100.0
+radial_accel_random = 1.0
+scale_amount = 10.0
+scale_amount_random = 0.5
+color_ramp = SubResource( 17 )
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="YSort"]
+show_behind_parent = true
+position = Vector2( -6.17493, -117.168 )
+rotation = -0.523599
+scale = Vector2( 10, 5 )
+amount = 20
+lifetime = 0.8
+emission_shape = 3
+emission_points = PoolVector2Array(  )
+emission_colors = PoolColorArray(  )
+spread = 60.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 40.0
 initial_velocity_random = 1.0
 angular_velocity = 360.0
 angular_velocity_random = 1.0
@@ -237,7 +222,7 @@ color_ramp = SubResource( 17 )
 
 [node name="CPUParticles2D5" type="CPUParticles2D" parent="YSort"]
 show_behind_parent = true
-position = Vector2( 55.859, -230.654 )
+position = Vector2( -4.57938, -159.705 )
 rotation = -0.523599
 scale = Vector2( 10, 5 )
 amount = 20
@@ -258,17 +243,30 @@ scale_amount = 10.0
 scale_amount_random = 0.5
 color_ramp = SubResource( 17 )
 
-[node name="Hitbox" parent="." instance=ExtResource( 6 )]
-collision_mask = 4
-
-[node name="CollisionShape2D" parent="Hitbox" index="0"]
-shape = SubResource( 18 )
-
-[node name="Hurtbox" parent="." instance=ExtResource( 7 )]
-collision_layer = 8
-
-[node name="CollisionShape2D" parent="Hurtbox" index="0"]
-shape = SubResource( 19 )
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="YSort"]
+modulate = Color( 1, 0.517647, 0.14902, 1 )
+self_modulate = Color( 1, 0.211765, 0.211765, 1 )
+show_behind_parent = true
+position = Vector2( -7.60629, -48.3872 )
+rotation = -0.349066
+scale = Vector2( 10, 5 )
+amount = 100
+lifetime = 0.8
+spread = 60.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 30.0
+initial_velocity_random = 1.0
+angular_velocity = 360.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.1
+linear_accel = 60.0
+radial_accel = 100.0
+radial_accel_random = 1.0
+scale_amount = 10.0
+scale_amount_random = 0.5
+color_ramp = SubResource( 17 )
+hue_variation = 0.1
+hue_variation_random = 1.0
 
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 4 )]
 
@@ -280,7 +278,20 @@ shape = SubResource( 20 )
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
 shape = SubResource( 21 )
 
+[node name="Hurtbox" parent="." instance=ExtResource( 7 )]
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource( 19 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 6 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource( 18 )
+
 [node name="DistancingZone" type="Area2D" parent="."]
+visible = false
 collision_layer = 64
 collision_mask = 64
 script = ExtResource( 2 )
@@ -289,14 +300,14 @@ script = ExtResource( 2 )
 shape = SubResource( 22 )
 
 [node name="Position2D" type="Position2D" parent="."]
-position = Vector2( -56.0315, 77.2397 )
+position = Vector2( 17.2981, 59.4459 )
 
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 [connection signal="body_entered" from="DistancingZone" to="DistancingZone" method="_on_DistancingZone_body_entered"]
 [connection signal="body_exited" from="DistancingZone" to="DistancingZone" method="_on_DistancingZone_body_exited"]
 
-[editable path="Hitbox"]
-[editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]
 [editable path="SoftCollision"]
+[editable path="Hurtbox"]
+[editable path="Hitbox"]
