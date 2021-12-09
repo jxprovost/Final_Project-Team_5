@@ -39,7 +39,7 @@ func _physics_process(delta):
 		State.CHASE:
 			var player = _playerDetectionZone.player
 			if player != null:
-				var direction = (player.global_position - global_position).normalized()
+				var direction : Vector2 = (player.global_position - global_position).normalized()
 				_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta)
 			else:
 				_state = State.IDLE

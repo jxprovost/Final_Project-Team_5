@@ -8,7 +8,7 @@
 [ext_resource path="res://Common/Hitbox.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Common/Hurtbox.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Common/Stats.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Shadows/light_shadow.png" type="Texture" id=9]
+[ext_resource path="res://Lighting/light.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 288.357
@@ -86,16 +86,16 @@ animations = [ {
 offsets = PoolRealArray( 0, 0.0725076, 0.401813, 0.800604, 1, 36.5687 )
 colors = PoolColorArray( 1, 1, 1, 1, 1, 0.384314, 0.243137, 1, 1, 0.351563, 0, 1, 1, 0.627991, 0.101563, 1, 1, 0.890137, 0.296875, 1, 0.997192, 1, 0.640625, 1 )
 
-[sub_resource type="CircleShape2D" id=20]
+[sub_resource type="CircleShape2D" id=18]
 radius = 10002.5
 
-[sub_resource type="CircleShape2D" id=21]
+[sub_resource type="CircleShape2D" id=19]
 radius = 284.948
 
-[sub_resource type="CircleShape2D" id=19]
+[sub_resource type="CircleShape2D" id=20]
 radius = 394.009
 
-[sub_resource type="CircleShape2D" id=18]
+[sub_resource type="CircleShape2D" id=21]
 radius = 207.419
 
 [sub_resource type="CircleShape2D" id=22]
@@ -121,6 +121,7 @@ animation = "launchingProjectile"
 frame = 5
 
 [node name="Stats" parent="." instance=ExtResource( 8 )]
+max_health = 5
 
 [node name="YSort" type="YSort" parent="."]
 show_behind_parent = true
@@ -270,24 +271,24 @@ hue_variation_random = 1.0
 [node name="PlayerDetectionZone" parent="." instance=ExtResource( 4 )]
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
-shape = SubResource( 20 )
+shape = SubResource( 18 )
 
 [node name="SoftCollision" parent="." instance=ExtResource( 5 )]
 
 [node name="CollisionShape2D" parent="SoftCollision" index="0"]
-shape = SubResource( 21 )
+shape = SubResource( 19 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 7 )]
 collision_layer = 8
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 
 [node name="Hitbox" parent="." instance=ExtResource( 6 )]
 collision_mask = 4
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
-shape = SubResource( 18 )
+shape = SubResource( 21 )
 
 [node name="DistancingZone" type="Area2D" parent="."]
 visible = false

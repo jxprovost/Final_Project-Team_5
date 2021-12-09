@@ -21,7 +21,7 @@ var _mimic_awareness := "sleeping"
 var _velocity := Vector2.ZERO
 var _knockback := Vector2.ZERO
 var _state = State.INACTIVE
-var _size = 1
+var _size := 1
 
 
 func _ready():
@@ -53,10 +53,10 @@ func _physics_process(delta):
 					$AnimatedSprite.animation = "blink"
 					$Hitbox/CollisionShape2D.disabled = false
 					
-				var player = $PlayerDetectionZone.player
-				var player2 = $AttackArea.player
+				var player : KinematicBody2D = $PlayerDetectionZone.player
+				var player2 : KinematicBody2D = $AttackArea.player
 				if player != null:
-					var direction = (player.global_position - global_position).normalized()
+					var direction : Vector2 = (player.global_position - global_position).normalized()
 					_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta)
 				else:
 					_state = State.INACTIVE
@@ -67,10 +67,10 @@ func _physics_process(delta):
 				$AnimatedSprite.flip_h = _velocity.x > 0
 				
 			State.ATTACK:
-				var player = $PlayerDetectionZone.player
-				var player2 = $AttackArea.player
+				var player : KinematicBody2D = $PlayerDetectionZone.player
+				var player2 : KinematicBody2D = $AttackArea.player
 				if player != null and player2 != null:
-					var direction = (player.global_position - global_position).normalized()
+					var direction : Vector2 = (player.global_position - global_position).normalized()
 					_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta * 2)
 							
 				if $AnimatedSprite.animation != "attack":
