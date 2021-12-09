@@ -81,3 +81,5 @@ We believe that this project has earned a grade of A in accordance with the requ
 - BackgroundMusic.mp3 "BackgroundMusic" by Jaren Provost
 
 - burning.wav "BurningSound". Created by InspectorJ (https://freesound.org/people/InspectorJ/sounds/398808/) CC0 1.0 Universal, and JasonElrod (https://freesound.org/people/JasonElrod/sounds/85468/) CC0 1.0 Universal, combined and edited by Max Braun
+
+- [kevinkace's Barrel Breaking Sound Effect](https://freesound.org/people/kevinkace/sounds/66772/) licensed under [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/).
