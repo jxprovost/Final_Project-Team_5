@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+signal barrel_destroyed
+
 var destroyed := false
 
 
@@ -14,3 +16,13 @@ func destroy():
 		$DestroyedParticles.emitting = true
 		$DestroyedTopParticle.emitting = true
 		$BreakSoundPlayer.play()
+		$Timer.start()
+
+
+func _on_Timer_timeout():
+	$AnimationPlayer.play("FadeAway")
+
+
+func _on_AnimationPlayer_animation_finished(_anim_name):
+	emit_signal("barrel_destroyed")
+	queue_free()

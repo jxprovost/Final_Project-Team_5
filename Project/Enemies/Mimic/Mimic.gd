@@ -70,7 +70,6 @@ func _physics_process(delta):
 				var player = $PlayerDetectionZone.player
 				var player2 = $AttackArea.player
 				if player != null and player2 != null:
-
 					var direction = (player.global_position - global_position).normalized()
 					_velocity = _velocity.move_toward(direction * _MAX_SPEED, _ACCELERATION * delta * 2)
 							
