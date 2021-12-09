@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://World/DF1/Scenery/Column/Column.tscn" type="PackedScene" id=1]
 [ext_resource path="res://UI/Menu/Menu.gd" type="Script" id=2]
@@ -394,6 +394,30 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 6
+use_filter = true
+font_data = ExtResource( 6 )
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 6 )
+
 [node name="Menu" type="Node2D"]
 script = ExtResource( 2 )
 
@@ -425,10 +449,10 @@ position = Vector2( 80, 144 )
 position = Vector2( 240, 144 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 20.0
-margin_top = 50.0
-margin_right = 305.0
-margin_bottom = 100.0
+margin_left = 16.8874
+margin_top = 41.6604
+margin_right = 301.887
+margin_bottom = 91.6604
 rect_pivot_offset = Vector2( 142.5, 25 )
 custom_fonts/font = SubResource( 3 )
 text = "Dungeon"
@@ -443,10 +467,10 @@ autoplay = "MenuAnimation"
 anims/MenuAnimation = SubResource( 4 )
 
 [node name="Button" type="Button" parent="."]
-margin_left = 128.0
-margin_top = 119.403
-margin_right = 192.0
-margin_bottom = 146.403
+margin_left = 94.4328
+margin_top = 125.733
+margin_right = 158.433
+margin_bottom = 152.733
 custom_styles/hover = ExtResource( 8 )
 custom_styles/pressed = ExtResource( 8 )
 custom_styles/focus = ExtResource( 7 )
@@ -458,4 +482,161 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Button2" type="Button" parent="."]
+margin_left = 160.229
+margin_top = 125.992
+margin_right = 224.229
+margin_bottom = 152.992
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 8 )
+custom_styles/focus = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 7 )
+custom_styles/normal = ExtResource( 7 )
+custom_fonts/font = SubResource( 5 )
+text = "Controls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+margin_left = 1.0
+margin_right = 320.0
+margin_bottom = 180.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ColorRect"]
+margin_left = 41.1882
+margin_top = 30.9955
+margin_right = 66.1882
+margin_bottom = 50.9955
+text = "W"
+
+[node name="Button2" type="Button" parent="ColorRect"]
+margin_left = 18.7506
+margin_top = 54.9978
+margin_right = 39.7506
+margin_bottom = 74.9978
+text = "A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="ColorRect"]
+margin_left = 42.7394
+margin_top = 80.9799
+margin_right = 61.7394
+margin_bottom = 100.98
+text = "^"
+
+[node name="Button4" type="Button" parent="ColorRect"]
+margin_left = 65.2338
+margin_top = 54.5489
+margin_right = 87.2338
+margin_bottom = 74.5489
+text = "D"
+
+[node name="Button5" type="Button" parent="ColorRect"]
+margin_left = 43.3764
+margin_top = 53.9343
+margin_right = 62.3764
+margin_bottom = 73.9343
+text = "S"
+
+[node name="Button6" type="Button" parent="ColorRect"]
+margin_left = 18.5624
+margin_top = 102.753
+margin_right = 38.5624
+margin_bottom = 122.753
+text = "<"
+
+[node name="Button7" type="Button" parent="ColorRect"]
+margin_left = 42.3129
+margin_top = 103.379
+margin_right = 62.3129
+margin_bottom = 123.379
+text = "V"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button8" type="Button" parent="ColorRect"]
+margin_left = 65.7961
+margin_top = 102.912
+margin_right = 85.7961
+margin_bottom = 122.912
+text = ">"
+
+[node name="Button9" type="Button" parent="ColorRect"]
+margin_left = 166.459
+margin_top = 48.363
+margin_right = 185.459
+margin_bottom = 68.363
+text = "F"
+
+[node name="Button10" type="Button" parent="ColorRect"]
+margin_left = 135.529
+margin_top = 103.474
+margin_right = 212.529
+margin_bottom = 123.474
+text = "SPACEBAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="ColorRect"]
+margin_left = 54.8641
+margin_top = 3.81404
+margin_right = 257.864
+margin_bottom = 24.814
+custom_fonts/font = SubResource( 6 )
+text = "BASIC MOVEMENT & CONTROLS"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+margin_left = 189.515
+margin_top = 47.8006
+margin_right = 237.515
+margin_bottom = 68.8006
+custom_fonts/font = SubResource( 7 )
+text = "DODGE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="ColorRect"]
+margin_left = 221.008
+margin_top = 104.037
+margin_right = 269.008
+margin_bottom = 125.037
+custom_fonts/font = SubResource( 8 )
+text = "ATTACK"
+
+[node name="Label4" type="Label" parent="ColorRect"]
+margin_left = 18.0
+margin_top = 129.0
+margin_right = 93.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 9 )
+text = "W/Up arrow key: Move Up
+A/Left arrow key: Move Left
+S/Down arrow key: Move Down
+D/Right arrow key: Move Right"
+
+[node name="Escape" type="Button" parent="ColorRect"]
+margin_left = 292.0
+margin_top = 3.0
+margin_right = 314.0
+margin_bottom = 26.0
+custom_styles/normal = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="Button" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+[connection signal="pressed" from="ColorRect/Escape" to="." method="_on_Escape_pressed"]
