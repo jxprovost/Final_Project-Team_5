@@ -731,8 +731,8 @@ position = Vector2( 160, 0 )
 [connection signal="health_changed" from="YSort/Player" to="InterfaceLayer/Interface" method="_on_Player_health_changed"]
 [connection signal="max_health_changed" from="YSort/Player" to="InterfaceLayer/Interface" method="_on_Player_max_health_changed"]
 [connection signal="tree_exited" from="YSort/Player" to="." method="_on_Player_tree_exited"]
-[connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Player" method="_on_HealHeart_body_entered"]
 [connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Environment/HealHeart" method="_on_HealHeart_body_entered"]
+[connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Player" method="_on_HealHeart_body_entered"]
 [connection signal="mimic_defeated" from="YSort/Enemies/Mimic" to="." method="_on_Mimic_defeated"]
 [connection signal="pressed" from="Camera2D/Control/Menu" to="." method="_on_Menu_pressed"]
 
