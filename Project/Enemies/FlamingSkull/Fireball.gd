@@ -25,11 +25,11 @@ func _ready():
 
 func _process(delta):
 
-	if $Timer.time_left >= 6:
+	if $Timer.time_left >= 4:
 		_state = State.FORMING
-	elif $Timer.time_left >= 3:
+	elif $Timer.time_left >= 1:
 		_state = State.PREPARING
-	elif $Timer.time_left < 3:
+	elif $Timer.time_left < 1:
 		_state = State.LAUNCH
 		
 	match _state:
@@ -48,22 +48,36 @@ func _process(delta):
 				var player = $PlayerDetectionZone.player
 				if player != null:
 					var direction = (player.global_position - global_position).normalized()
-					_velocity = _velocity.move_toward(direction * 1000, 500 * delta)
+					_velocity = _velocity.move_toward(direction * 200, 500 * delta)
 				else:
 					_state = State.INACTIVE
 				
-				_velocity = move_and_slide(_velocity)
+	_velocity = move_and_slide(_velocity)
 				
-			
-			
-			
 func _on_Timer_timeout():
+	_trigger_explosion()
+
+
+func _on_Hitbox_area_entered(_area):
+	_trigger_explosion()
+
+
+func _on_Fireball_tree_exited():
+	queue_free()
+
+
+func _on_Stats_no_health():
 	queue_free()
 	var enemyDeathEffect = EnemyDeathEffect.instance()
-	enemyDeathEffect.scale.x = 200
-	enemyDeathEffect.scale.y = 200
-	$Hitbox.scale.x = 20
-	$Hitbox.scale.y = 20
+	enemyDeathEffect.scale.x = 100
+	enemyDeathEffect.scale.y = 100
 	
-	$Position2D.add_child(enemyDeathEffect)
+	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
+	enemyDeathEffect.position.y = 100
+
+
+func _trigger_explosion():
+	$Hitbox.scale.x = 10
+	$Hitbox.scale.y = 10
+	$Stats.health -= 1
