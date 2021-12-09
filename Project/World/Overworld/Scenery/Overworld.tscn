@@ -2,20 +2,20 @@
 
 [ext_resource path="res://World/Overworld/grass_tile.png" type="Texture" id=1]
 [ext_resource path="res://World/Overworld/overworld_tile_set.png" type="Texture" id=2]
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://World/Overworld/Scenery/Rocks/Rock0.tscn" type="PackedScene" id=4]
-[ext_resource path="res://World/Overworld/Scenery/Rocks/Rock1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://World/Overworld/Scenery/Rocks/Rock2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://World/Overworld/Scenery/Rocks/Rock3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://World/Overworld/Scenery/Trees/Tree2.tscn" type="PackedScene" id=8]
-[ext_resource path="res://World/Overworld/Scenery/Trees/Tree5.tscn" type="PackedScene" id=9]
-[ext_resource path="res://World/Overworld/Scenery/Trees/Tree3.tscn" type="PackedScene" id=10]
-[ext_resource path="res://World/Overworld/Scenery/Trees/Tree0.tscn" type="PackedScene" id=11]
-[ext_resource path="res://World/Overworld/Scenery/Trees/Tree4.tscn" type="PackedScene" id=12]
-[ext_resource path="res://World/Overworld/Scenery/Trees/Tree1.tscn" type="PackedScene" id=13]
-[ext_resource path="res://World/Overworld/Interactive/CaveEntrance/CaveEntrence.tscn" type="PackedScene" id=14]
-[ext_resource path="res://World/Overworld/overworld.mp3" type="AudioStream" id=15]
-[ext_resource path="res://World/Overworld/Scenery/Butterfly/butterfly.tscn" type="PackedScene" id=17]
+[ext_resource path="res://World/Overworld/overworld.mp3" type="AudioStream" id=3]
+[ext_resource path="res://World/Overworld/Interactive/CaveEntrance/CaveEntrence.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/Overworld/Scenery/Trees/Tree0.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/Overworld/Scenery/Trees/Tree1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/Overworld/Scenery/Trees/Tree2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://World/Overworld/Scenery/Trees/Tree5.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World/Overworld/Scenery/Trees/Tree4.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/Overworld/Scenery/Trees/Tree3.tscn" type="PackedScene" id=11]
+[ext_resource path="res://World/Overworld/Scenery/Rocks/Rock2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://World/Overworld/Scenery/Rocks/Rock0.tscn" type="PackedScene" id=13]
+[ext_resource path="res://World/Overworld/Scenery/Butterfly/butterfly.tscn" type="PackedScene" id=14]
+[ext_resource path="res://World/Overworld/Scenery/Rocks/Rock1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://World/Overworld/Scenery/Rocks/Rock3.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -484,191 +484,191 @@ tile_data = PoolIntArray( -65538, 0, 0, -65537, 0, 1, -131072, 0, 1, -131071, 0,
 
 [node name="YSort" type="YSort" parent="."]
 
-[node name="Player" parent="YSort" instance=ExtResource( 3 )]
+[node name="Player" parent="YSort" instance=ExtResource( 10 )]
 position = Vector2( 300, 500 )
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
 remote_path = NodePath("../../../Camera2D")
 
-[node name="CaveEntrance" parent="YSort" instance=ExtResource( 14 )]
+[node name="CaveEntrance" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 300, 300 )
 
 [node name="Scenery" type="YSort" parent="YSort"]
 
 [node name="Trees" type="YSort" parent="YSort/Scenery"]
 
-[node name="StaticBody2D" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 173.389, 373.651 )
 scale = Vector2( 0.9, 1.5 )
 
-[node name="StaticBody2D3" parent="YSort/Scenery/Trees" instance=ExtResource( 13 )]
+[node name="StaticBody2D3" parent="YSort/Scenery/Trees" instance=ExtResource( 6 )]
 position = Vector2( 417.853, 228.295 )
 
-[node name="StaticBody2D4" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
+[node name="StaticBody2D4" parent="YSort/Scenery/Trees" instance=ExtResource( 7 )]
 position = Vector2( 399.919, 341.559 )
 
-[node name="StaticBody2D5" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
+[node name="StaticBody2D5" parent="YSort/Scenery/Trees" instance=ExtResource( 7 )]
 position = Vector2( 179.053, 149.009 )
 
-[node name="StaticBody2D6" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D6" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 483.702, 184.121 )
 
-[node name="StaticBody2D8" parent="YSort/Scenery/Trees" instance=ExtResource( 10 )]
+[node name="StaticBody2D8" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
 position = Vector2( 333.779, 167.097 )
 
-[node name="StaticBody2D9" parent="YSort/Scenery/Trees" instance=ExtResource( 10 )]
+[node name="StaticBody2D9" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
 position = Vector2( 128.083, 356.662 )
 
-[node name="StaticBody2D10" parent="YSort/Scenery/Trees" instance=ExtResource( 10 )]
+[node name="StaticBody2D10" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
 position = Vector2( 249.843, 213.193 )
 
-[node name="StaticBody2D11" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
+[node name="StaticBody2D11" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
 position = Vector2( 241.04, 426.922 )
 
-[node name="StaticBody2D12" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
+[node name="StaticBody2D12" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
 position = Vector2( 498.082, 255.667 )
 
-[node name="StaticBody2D13" parent="YSort/Scenery/Trees" instance=ExtResource( 10 )]
+[node name="StaticBody2D13" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
 position = Vector2( 218.836, 368.124 )
 
-[node name="StaticBody2D14" parent="YSort/Scenery/Trees" instance=ExtResource( 12 )]
+[node name="StaticBody2D14" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
 position = Vector2( 201.706, 299.085 )
 
-[node name="StaticBody2D15" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
+[node name="StaticBody2D15" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
 position = Vector2( 200.762, 196.203 )
 
-[node name="StaticBody2D16" parent="YSort/Scenery/Trees" instance=ExtResource( 10 )]
+[node name="StaticBody2D16" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
 position = Vector2( 366, 381 )
 
-[node name="StaticBody2D17" parent="YSort/Scenery/Trees" instance=ExtResource( 10 )]
+[node name="StaticBody2D17" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
 position = Vector2( 354.929, 236.839 )
 
-[node name="StaticBody2D18" parent="YSort/Scenery/Trees" instance=ExtResource( 13 )]
+[node name="StaticBody2D18" parent="YSort/Scenery/Trees" instance=ExtResource( 6 )]
 position = Vector2( 202.055, 446.862 )
 
-[node name="StaticBody2D19" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D19" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 373.597, 286.251 )
 
-[node name="StaticBody2D20" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D20" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 211.304, 227.388 )
 
-[node name="StaticBody2D21" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D21" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 377.802, 208.888 )
 
-[node name="StaticBody2D22" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D22" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 302.121, 207.206 )
 
-[node name="StaticBody2D23" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D23" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 450.96, 252.615 )
 
-[node name="StaticBody2D24" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D24" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 457.687, 324.091 )
 
-[node name="StaticBody2D25" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D25" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 123.01, 266.069 )
 
-[node name="StaticBody2D26" parent="YSort/Scenery/Trees" instance=ExtResource( 11 )]
+[node name="StaticBody2D26" parent="YSort/Scenery/Trees" instance=ExtResource( 5 )]
 position = Vector2( 287.826, 137.412 )
 
-[node name="StaticBody2D27" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
+[node name="StaticBody2D27" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
 position = Vector2( 417.324, 309.796 )
 
-[node name="StaticBody2D28" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
+[node name="StaticBody2D28" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
 position = Vector2( 166.737, 330.818 )
 
-[node name="StaticBody2D29" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
+[node name="StaticBody2D29" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
 position = Vector2( 411.438, 186.184 )
 
-[node name="StaticBody2D30" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
+[node name="StaticBody2D30" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
 position = Vector2( 479.55, 420.794 )
 
-[node name="StaticBody2D31" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
+[node name="StaticBody2D31" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
 position = Vector2( 150.76, 432.567 )
 
-[node name="StaticBody2D32" parent="YSort/Scenery/Trees" instance=ExtResource( 12 )]
+[node name="StaticBody2D32" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
 position = Vector2( 444.233, 461.998 )
 
-[node name="StaticBody2D33" parent="YSort/Scenery/Trees" instance=ExtResource( 12 )]
+[node name="StaticBody2D33" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
 position = Vector2( 498, 317 )
 
-[node name="StaticBody2D34" parent="YSort/Scenery/Trees" instance=ExtResource( 12 )]
+[node name="StaticBody2D34" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
 position = Vector2( 119.647, 193.752 )
 
-[node name="StaticBody2D35" parent="YSort/Scenery/Trees" instance=ExtResource( 12 )]
+[node name="StaticBody2D35" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
 position = Vector2( 223.918, 102.094 )
 
-[node name="StaticBody2D36" parent="YSort/Scenery/Trees" instance=ExtResource( 12 )]
+[node name="StaticBody2D36" parent="YSort/Scenery/Trees" instance=ExtResource( 9 )]
 position = Vector2( 514.868, 176.093 )
 
-[node name="StaticBody2D37" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
+[node name="StaticBody2D37" parent="YSort/Scenery/Trees" instance=ExtResource( 7 )]
 position = Vector2( 242.418, 264.387 )
 
-[node name="StaticBody2D38" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
+[node name="StaticBody2D38" parent="YSort/Scenery/Trees" instance=ExtResource( 7 )]
 position = Vector2( 115.442, 461.157 )
 
-[node name="StaticBody2D39" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
+[node name="StaticBody2D39" parent="YSort/Scenery/Trees" instance=ExtResource( 7 )]
 position = Vector2( 188.6, 487.225 )
 
-[node name="StaticBody2D40" parent="YSort/Scenery/Trees" instance=ExtResource( 13 )]
+[node name="StaticBody2D40" parent="YSort/Scenery/Trees" instance=ExtResource( 6 )]
 position = Vector2( 370.234, 143.298 )
 
-[node name="StaticBody2D41" parent="YSort/Scenery/Trees" instance=ExtResource( 13 )]
+[node name="StaticBody2D41" parent="YSort/Scenery/Trees" instance=ExtResource( 6 )]
 position = Vector2( 322.303, 117.23 )
 
-[node name="StaticBody2D7" parent="YSort/Scenery/Trees" instance=ExtResource( 8 )]
+[node name="StaticBody2D7" parent="YSort/Scenery/Trees" instance=ExtResource( 7 )]
 position = Vector2( 392.472, 439.19 )
 
-[node name="StaticBody2D2" parent="YSort/Scenery/Trees" instance=ExtResource( 13 )]
+[node name="StaticBody2D2" parent="YSort/Scenery/Trees" instance=ExtResource( 6 )]
 position = Vector2( 507.178, 361.724 )
 
 [node name="Rocks" type="YSort" parent="YSort/Scenery"]
 
-[node name="Rock5" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock5" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 259.282, 115.974 )
 
-[node name="Rock0" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock0" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 115.813, 421.789 )
 
-[node name="Rock1" parent="YSort/Scenery/Rocks" instance=ExtResource( 5 )]
+[node name="Rock1" parent="YSort/Scenery/Rocks" instance=ExtResource( 15 )]
 position = Vector2( 447.113, 140.514 )
 
-[node name="Rock2" parent="YSort/Scenery/Rocks" instance=ExtResource( 6 )]
+[node name="Rock2" parent="YSort/Scenery/Rocks" instance=ExtResource( 12 )]
 position = Vector2( 152.624, 240.565 )
 
-[node name="Rock3" parent="YSort/Scenery/Rocks" instance=ExtResource( 7 )]
+[node name="Rock3" parent="YSort/Scenery/Rocks" instance=ExtResource( 16 )]
 position = Vector2( 440.695, 396.184 )
 
-[node name="Rock4" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock4" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 462.215, 288.703 )
 
-[node name="Rock14" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock14" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 261, 328 )
 
-[node name="Rock15" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock15" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 342, 328 )
 
-[node name="Rock6" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock6" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 261, 369 )
 
-[node name="Rock7" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock7" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 343, 365 )
 
-[node name="Rock8" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock8" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 262, 411 )
 
-[node name="Rock9" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock9" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 344, 406 )
 
-[node name="Rock10" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock10" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 263, 446 )
 
-[node name="Rock11" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock11" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 344, 447 )
 
-[node name="Rock12" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock12" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 264, 488 )
 
-[node name="Rock13" parent="YSort/Scenery/Rocks" instance=ExtResource( 4 )]
+[node name="Rock13" parent="YSort/Scenery/Rocks" instance=ExtResource( 13 )]
 position = Vector2( 345, 486 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -684,11 +684,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Butterfly" parent="." instance=ExtResource( 17 )]
+[node name="Butterfly" parent="." instance=ExtResource( 14 )]
 position = Vector2( 336.586, 491.955 )
 rotation = 3.14159
 scale = Vector2( 4.00815, 4.98508 )
 
 [node name="OverworldMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 15 )
+stream = ExtResource( 3 )
 autoplay = true
