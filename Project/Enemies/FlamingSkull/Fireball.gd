@@ -44,15 +44,26 @@ func _process(delta):
 				_prep = true
 		
 		State.LAUNCH:
-			var player = $PlayerDetectionZone.player
-			if player != null:
-				var direction = (player.global_position - global_position).normalized()
-				_velocity = _velocity.move_toward(direction * 1000, 500 * delta)
-			else:
-				_state = State.INACTIVE
+			if $Timer.time_left != 0:
+				var player = $PlayerDetectionZone.player
+				if player != null:
+					var direction = (player.global_position - global_position).normalized()
+					_velocity = _velocity.move_toward(direction * 1000, 500 * delta)
+				else:
+					_state = State.INACTIVE
 				
-			_velocity = move_and_slide(_velocity)
+				_velocity = move_and_slide(_velocity)
+				
+			
 			
 			
 func _on_Timer_timeout():
 	queue_free()
+	var enemyDeathEffect = EnemyDeathEffect.instance()
+	enemyDeathEffect.scale.x = 200
+	enemyDeathEffect.scale.y = 200
+	$Hitbox.scale.x = 20
+	$Hitbox.scale.y = 20
+	
+	$Position2D.add_child(enemyDeathEffect)
+	enemyDeathEffect.global_position = global_position
