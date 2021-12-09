@@ -580,7 +580,7 @@ position = Vector2( 208.923, -330.889 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 160, 90 )
 current = true
-zoom = Vector2( 0.75, 0.75 )
+zoom = Vector2( 1.5, 1.5 )
 smoothing_enabled = true
 
 [node name="Control" type="Control" parent="Camera2D"]
