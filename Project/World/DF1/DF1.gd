@@ -16,11 +16,11 @@ func _process(_delta):
 
 
 func reset_level():
-	var _reset = get_tree().change_scene("res://World/World.tscn")
+	var _reset = get_tree().change_scene("res://World/Overworld/Overworld.tscn")
 
 
 func quit_level():
-	var _quit = get_tree().change_scene("res://World/Menu.tscn")
+	var _quit = get_tree().change_scene("res://UI/Menu/Menu.tscn")
 
 
 func complete_mimic_quest():

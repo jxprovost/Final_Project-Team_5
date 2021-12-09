@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=2]
+[gd_scene load_steps=66 format=2]
 
 [ext_resource path="res://World/Overworld/grass_tile.png" type="Texture" id=1]
 [ext_resource path="res://World/Overworld/overworld_tile_set.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://World/Overworld/Scenery/Butterfly/butterfly.tscn" type="PackedScene" id=14]
 [ext_resource path="res://World/Overworld/Scenery/Rocks/Rock1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://World/Overworld/Scenery/Rocks/Rock3.tscn" type="PackedScene" id=16]
+[ext_resource path="res://World/Overworld/Overworld.gd" type="Script" id=17]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
@@ -468,6 +469,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 
 [node name="Overworld" type="Node2D"]
 position = Vector2( 0, -1 )
+script = ExtResource( 17 )
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 1 )

@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://UI/Interface.gd" type="Script" id=1]
 [ext_resource path="res://UI/heart_full.png" type="Texture" id=2]
 [ext_resource path="res://UI/heart_empty.png" type="Texture" id=3]
+[ext_resource path="res://fonts/Metal_Mania/MetalMania-Regular.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 5
+outline_size = 1
+outline_color = Color( 0.290196, 0.290196, 0.290196, 1 )
+font_data = ExtResource( 4 )
 
 [node name="Interface" type="Control"]
 margin_right = 320.0
@@ -11,16 +18,6 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="StatusBars" type="VBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="HealthBar" type="VBoxContainer" parent="StatusBars"]
-margin_right = 40.0
 
 [node name="HeartUIEmpty" type="TextureRect" parent="."]
 margin_left = 1.0
@@ -43,3 +40,11 @@ stretch_mode = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="."]
+margin_top = 172.0
+margin_right = 320.0
+margin_bottom = 179.0
+custom_fonts/font = SubResource( 1 )
+text = "Move: WASD or Arrow Keys	      Dodge: F or K      Attack: Space or J"
+align = 1
