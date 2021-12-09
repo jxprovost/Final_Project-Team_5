@@ -400,15 +400,6 @@ texture = ExtResource( 21 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 4000, 4000 )
 
-[node name="Pillar0" parent="Background" instance=ExtResource( 32 )]
-position = Vector2( -217.862, 310.239 )
-
-[node name="Pillar1" parent="Background" instance=ExtResource( 37 )]
-position = Vector2( -192.834, 315.912 )
-
-[node name="Pillar2" parent="Background" instance=ExtResource( 38 )]
-position = Vector2( -147.783, 326.591 )
-
 [node name="LavaTileMap" type="TileMap" parent="."]
 material = ExtResource( 18 )
 tile_set = SubResource( 1 )
@@ -530,6 +521,17 @@ position = Vector2( 124.199, -389.491 )
 [node name="Column12" parent="YSort/Environment/Columns" instance=ExtResource( 3 )]
 position = Vector2( 187.699, -389.241 )
 
+[node name="Pillars" type="YSort" parent="YSort/Environment"]
+
+[node name="Pillar0" parent="YSort/Environment/Pillars" instance=ExtResource( 32 )]
+position = Vector2( 118.138, 111.239 )
+
+[node name="Pillar1" parent="YSort/Environment/Pillars" instance=ExtResource( 37 )]
+position = Vector2( 143.166, 116.912 )
+
+[node name="Pillar2" parent="YSort/Environment/Pillars" instance=ExtResource( 38 )]
+position = Vector2( 188.217, 127.591 )
+
 [node name="Barrel" parent="YSort/Environment" instance=ExtResource( 15 )]
 position = Vector2( 310.082, 4.15296 )
 
@@ -579,7 +581,7 @@ position = Vector2( 463.565, 58.2911 )
 position = Vector2( 710.979, 154.642 )
 
 [node name="Door" parent="YSort/Environment" instance=ExtResource( 4 )]
-position = Vector2( 236.414, -48.7458 )
+position = Vector2( 160, -50 )
 
 [node name="Rock2" parent="YSort/Environment" instance=ExtResource( 29 )]
 position = Vector2( -168.985, 12.0567 )
@@ -721,8 +723,8 @@ position = Vector2( 161, 0 )
 [connection signal="health_changed" from="YSort/Player" to="InterfaceLayer/Interface" method="_on_Player_health_changed"]
 [connection signal="max_health_changed" from="YSort/Player" to="InterfaceLayer/Interface" method="_on_Player_max_health_changed"]
 [connection signal="tree_exited" from="YSort/Player" to="." method="_on_Player_tree_exited"]
-[connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Environment/HealHeart" method="_on_HealHeart_body_entered"]
 [connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Player" method="_on_HealHeart_body_entered"]
+[connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Environment/HealHeart" method="_on_HealHeart_body_entered"]
 [connection signal="mimic_defeated" from="YSort/Enemies/Mimic" to="." method="_on_Mimic_defeated"]
 [connection signal="pressed" from="Camera2D/Control/Menu" to="." method="_on_Menu_pressed"]
 
