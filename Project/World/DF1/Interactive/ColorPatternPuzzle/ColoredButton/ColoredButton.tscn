@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://World/DF1/Interactive/ColorPatternPuzzle/ColoredButton/ColoredButton.gd" type="Script" id=1]
 [ext_resource path="res://World/DF1/Interactive/ColorPatternPuzzle/ColoredButton/button_press.wav" type="AudioStream" id=2]
@@ -30,6 +30,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="OccluderPolygon2D" id=5]
+polygon = PoolVector2Array( -8.02058, 7.96266, -7.95436, -4.88333, 7.9707, -4.94954, 8.03691, 7.99577 )
+
 [node name="ColoredButton" type="Area2D"]
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
@@ -38,6 +41,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Button" type="AnimatedSprite" parent="."]
+light_mask = 2
 frames = SubResource( 4 )
 animation = "pressed"
 
@@ -52,6 +56,9 @@ energy = 0.5
 
 [node name="PressAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 5 )
 
 [connection signal="body_entered" from="." to="." method="_on_ColoredButton_body_entered"]
 [connection signal="timeout" from="PressedTimer" to="." method="_on_PressedTimer_timeout"]

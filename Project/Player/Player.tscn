@@ -775,9 +775,13 @@ color_ramp = SubResource( 48 )
 stream = ExtResource( 11 )
 
 [node name="Light2D" type="Light2D" parent="."]
+light_mask = 3
 texture = ExtResource( 10 )
-texture_scale = 2.0
-energy = 0.5
+texture_scale = 3.0
+color = Color( 0.894118, 0.686275, 0.501961, 1 )
+energy = 0.75
+range_item_cull_mask = 3
+shadow_enabled = true
 
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
