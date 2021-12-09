@@ -69,47 +69,47 @@
 0/shapes = [  ]
 0/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=2]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 111.5, 15.604 )
 
-[sub_resource type="RectangleShape2D" id=13]
+[sub_resource type="RectangleShape2D" id=4]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 113.129, 16.0599 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=6]
 
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 15.9476, 63.8427 )
 
-[sub_resource type="RectangleShape2D" id=15]
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 16.0219, 63.2195 )
-
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=8]
 
 [sub_resource type="RectangleShape2D" id=9]
-extents = Vector2( 128.511, 384.06 )
-
-[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 16.0219, 63.2195 )
 
 [sub_resource type="RectangleShape2D" id=10]
+
+[sub_resource type="RectangleShape2D" id=11]
 extents = Vector2( 128.511, 384.06 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="RectangleShape2D" id=12]
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 128.511, 384.06 )
+
+[sub_resource type="DynamicFont" id=14]
 use_filter = true
 font_data = ExtResource( 23 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=15]
 size = 10
 outline_color = Color( 0.501961, 0.0705882, 0.0705882, 1 )
 use_filter = true
 font_data = ExtResource( 25 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=16]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
@@ -171,26 +171,26 @@ position = Vector2( 668.28, 60.2217 )
 position = Vector2( 432.45, 112.578 )
 
 [node name="CollisionShape2D" parent="LavaCollider/Hitbox" index="0"]
-shape = SubResource( 12 )
+shape = SubResource( 2 )
 
 [node name="LavaShape" parent="LavaCollider" index="2"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="LavaCollider2" parent="." instance=ExtResource( 30 )]
 position = Vector2( 591.533, 14.7594 )
 
 [node name="CollisionShape2D" parent="LavaCollider2/Hitbox" index="0"]
-shape = SubResource( 13 )
+shape = SubResource( 4 )
 
 [node name="LavaShape" parent="LavaCollider2" index="2"]
 position = Vector2( 0.533508, 0.144234 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="LavaCollider3" parent="." instance=ExtResource( 30 )]
 position = Vector2( -144.852, 287.508 )
 
 [node name="CollisionShape2D" parent="LavaCollider3/Hitbox" index="0"]
-shape = SubResource( 14 )
+shape = SubResource( 6 )
 
 [node name="LavaShape" parent="LavaCollider3" index="2"]
 position = Vector2( 1.88794, -0.179619 )
@@ -200,31 +200,31 @@ shape = SubResource( 7 )
 position = Vector2( -306.857, 287.314 )
 
 [node name="CollisionShape2D" parent="LavaCollider4/Hitbox" index="0"]
-shape = SubResource( 15 )
+shape = SubResource( 8 )
 
 [node name="LavaShape" parent="LavaCollider4" index="2"]
 position = Vector2( 1.88794, -0.179619 )
-shape = SubResource( 11 )
+shape = SubResource( 9 )
 
 [node name="LavaCollider5" parent="." instance=ExtResource( 30 )]
 position = Vector2( -3.37097, -1696.02 )
 
 [node name="CollisionShape2D" parent="LavaCollider5/Hitbox" index="0"]
-shape = SubResource( 16 )
+shape = SubResource( 10 )
 
 [node name="LavaShape" parent="LavaCollider5" index="2"]
 position = Vector2( 1.88794, -0.179619 )
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="LavaCollider6" parent="." instance=ExtResource( 30 )]
 position = Vector2( 319.6, -1696.02 )
 
 [node name="CollisionShape2D" parent="LavaCollider6/Hitbox" index="0"]
-shape = SubResource( 17 )
+shape = SubResource( 12 )
 
 [node name="LavaShape" parent="LavaCollider6" index="2"]
 position = Vector2( 1.88794, -0.179619 )
-shape = SubResource( 10 )
+shape = SubResource( 13 )
 
 [node name="Rock1" parent="LavaCollider6" instance=ExtResource( 41 )]
 position = Vector2( -271.679, 138.174 )
@@ -723,7 +723,7 @@ margin_left = -71.0
 margin_top = -53.0
 margin_right = 69.0
 margin_bottom = 38.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 14 )
 text = "
 Objective Completed"
 align = 1
@@ -737,7 +737,7 @@ margin_left = -118.013
 margin_top = -23.6337
 margin_right = 116.987
 margin_bottom = 66.3663
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 15 )
 custom_colors/font_color = Color( 1, 0.258824, 0.258824, 1 )
 text = "You Died
 
@@ -753,7 +753,7 @@ margin_left = -56.4928
 margin_top = -8.5665
 margin_right = 55.5072
 margin_bottom = 11.4335
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 16 )
 text = "Main Menu"
 __meta__ = {
 "_edit_use_anchors_": false

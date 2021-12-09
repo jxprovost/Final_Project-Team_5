@@ -45,6 +45,7 @@ func quit_level():
 func complete_mimic_quest():
 	skull_quest_completed = true
 	$YSort/Player.queue_free()
+	$Camera2D/WinLight.enabled = true
 	$Camera2D/Control/Win.visible = true
 	$Camera2D/Control/Menu.visible = true
 
