@@ -6,13 +6,15 @@ This project will collect and reflect the various knowledge and skills we have a
 ### Controls:
 Arrow Keys & wasd => Directional Controls
 
-Space => attack
+Space or J => attack
+
+F or K => dodge
 
 r => reset level
 
 q => quit to menu
 
-Find the treasure!
+Reach and defeat the flaming skull boss.
 
 
 ## Project Report
