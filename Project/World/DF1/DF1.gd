@@ -51,6 +51,7 @@ func complete_mimic_quest():
 
 func _on_Player_tree_exited():
 	if skull_defeated == false:
+		$Camera2D/WinLight.enabled = true
 		$Camera2D/Control/Loss.visible = true
 		$Camera2D/Control/Menu.visible = true
 

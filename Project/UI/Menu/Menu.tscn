@@ -509,11 +509,14 @@ __meta__ = {
 }
 
 [node name="Button" type="Button" parent="ColorRect"]
-margin_left = 41.1882
-margin_top = 30.9955
-margin_right = 66.1882
-margin_bottom = 50.9955
+margin_left = 40.0645
+margin_top = 32.3065
+margin_right = 65.0645
+margin_bottom = 52.3065
 text = "W"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button2" type="Button" parent="ColorRect"]
 margin_left = 18.7506
@@ -521,6 +524,16 @@ margin_top = 54.9978
 margin_right = 39.7506
 margin_bottom = 74.9978
 text = "A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button12" type="Button" parent="ColorRect"]
+margin_left = 113.259
+margin_top = 102.977
+margin_right = 134.259
+margin_bottom = 122.977
+text = "J"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -540,10 +553,10 @@ margin_bottom = 74.5489
 text = "D"
 
 [node name="Button5" type="Button" parent="ColorRect"]
-margin_left = 43.3764
-margin_top = 53.9343
-margin_right = 62.3764
-margin_bottom = 73.9343
+margin_left = 43.1891
+margin_top = 55.058
+margin_right = 62.1891
+margin_bottom = 75.058
 text = "S"
 
 [node name="Button6" type="Button" parent="ColorRect"]
@@ -554,9 +567,9 @@ margin_bottom = 122.753
 text = "<"
 
 [node name="Button7" type="Button" parent="ColorRect"]
-margin_left = 42.3129
+margin_left = 42.4316
 margin_top = 103.379
-margin_right = 62.3129
+margin_right = 62.4316
 margin_bottom = 123.379
 text = "V"
 __meta__ = {
@@ -577,6 +590,13 @@ margin_right = 185.459
 margin_bottom = 68.363
 text = "F"
 
+[node name="Button11" type="Button" parent="ColorRect"]
+margin_left = 143.782
+margin_top = 48.2769
+margin_right = 163.782
+margin_bottom = 68.2769
+text = "K"
+
 [node name="Button10" type="Button" parent="ColorRect"]
 margin_left = 135.529
 margin_top = 103.474
@@ -596,10 +616,10 @@ custom_fonts/font = SubResource( 6 )
 text = "BASIC MOVEMENT & CONTROLS"
 
 [node name="Label2" type="Label" parent="ColorRect"]
-margin_left = 189.515
-margin_top = 47.8006
-margin_right = 237.515
-margin_bottom = 68.8006
+margin_left = 197.849
+margin_top = 48.3959
+margin_right = 245.849
+margin_bottom = 69.3959
 custom_fonts/font = SubResource( 7 )
 text = "DODGE"
 __meta__ = {
@@ -607,10 +627,10 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="ColorRect"]
-margin_left = 221.008
-margin_top = 104.037
-margin_right = 269.008
-margin_bottom = 125.037
+margin_left = 225.77
+margin_top = 102.45
+margin_right = 273.77
+margin_bottom = 123.45
 custom_fonts/font = SubResource( 8 )
 text = "ATTACK"
 

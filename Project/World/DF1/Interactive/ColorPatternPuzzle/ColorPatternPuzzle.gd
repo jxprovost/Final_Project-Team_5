@@ -70,4 +70,3 @@ func _success():
 	$Buttons/YellowButton.lock()
 	$Timeout.stop()
 	_solved = true
-	print("PUZZLE SOLVED!")

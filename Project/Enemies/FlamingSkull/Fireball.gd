@@ -46,7 +46,7 @@ func _process(delta):
 			if $Timer.time_left != 0:
 				var player = $PlayerDetectionZone.player
 				if player != null:
-					var direction = (player.global_position - global_position).normalized()
+					var direction : Vector2 = (player.global_position - global_position).normalized()
 					_velocity = _velocity.move_toward(direction * 200, 500 * delta)
 				else:
 					_state = State.INACTIVE

@@ -1,6 +1,6 @@
 extends Area2D
 
-var player = null
+var player : KinematicBody2D = null
 
 
 func can_see_player():
