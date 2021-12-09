@@ -19,11 +19,9 @@ Find the treasure!
 
 Reflection:
 
-For this iteration, our team displayed great communication skills and cooperation. We were able to meet all of our goals to create a cohesive product for this iteration. Our project currently meets the basic functionality which we envisioned during planning.
+Our team is very happy with what we have accomplished. We wish that we had more time to continue the project together.
 
-Some of the things we struggled on, were issues with using git and github for file management. This is just from lack of experience on our end, but we overcame this as a group. There were other small issues, which were resolved with paired programming, and references from online resources. There were no serious or gamebreaking issues that arose this iteration.
-
-On a successful note, we didnt have any serious merge conflicts throughout our time on the project. We would like to think this is due to our new paired programmning policy.
+Once again, we showed great communication skills outside of the classroom. We spent many hours collaborating together, and everyone contributed a fair share. The lighting system was very intriguing for us, but it was very challenging to manage the layers. Lastly, we all created custom assets for the game, and we realized how time consuming asset creation is.
 
 Self Evaluation:
 - [X] D-1: The repository link is submitted to Canvas before the project deadline.
