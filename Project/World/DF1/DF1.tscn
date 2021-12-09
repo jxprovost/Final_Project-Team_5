@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://World/DF1/DF1.gd" type="Script" id=1]
 [ext_resource path="res://World/DF1/Scenery/Vines/Vines0/Vines0.tscn" type="PackedScene" id=2]
@@ -31,7 +31,6 @@
 [ext_resource path="res://World/Overworld/Scenery/Rocks/Rock2.tscn" type="PackedScene" id=29]
 [ext_resource path="res://World/DF1/Interactive/Lava/LavaCollider.tscn" type="PackedScene" id=30]
 [ext_resource path="res://World/DF1/Interactive/PistonTrap/PistonWall.tscn" type="PackedScene" id=31]
-[ext_resource path="res://World/DF1/Scenery/RedLight/RedLight.tscn" type="PackedScene" id=32]
 [ext_resource path="res://World/DF1/Interactive/InstantTeleporter/InstantTeleporter.tscn" type="PackedScene" id=33]
 [ext_resource path="res://World/DF1/Interactive/HealHeart/HealHeart.tscn" type="PackedScene" id=34]
 [ext_resource path="res://World/DF1/Interactive/HealHeart/HealHeart.gd" type="Script" id=35]
@@ -630,7 +629,6 @@ position = Vector2( -579.55, -1204.65 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 160, 88.9989 )
 current = true
-smoothing_enabled = true
 
 [node name="Control" type="Control" parent="Camera2D"]
 margin_right = 40.0
@@ -695,44 +693,18 @@ position = Vector2( 1013.24, 7.38034 )
 stream = ExtResource( 26 )
 autoplay = true
 
-[node name="RedLights" type="Node2D" parent="."]
-
-[node name="RedLight" parent="RedLights" instance=ExtResource( 32 )]
-position = Vector2( -475, 145 )
-
-[node name="RedLight2" parent="RedLights" instance=ExtResource( 32 )]
-position = Vector2( -550, 145 )
-
-[node name="RedLight3" parent="RedLights" instance=ExtResource( 32 )]
-position = Vector2( -625, 145 )
-
-[node name="RedLight4" parent="RedLights" instance=ExtResource( 32 )]
-position = Vector2( -700, 145 )
-
-[node name="RedLight5" parent="RedLights" instance=ExtResource( 32 )]
-position = Vector2( -775, 145 )
-
-[node name="RedLight6" parent="RedLights" instance=ExtResource( 32 )]
-position = Vector2( -850, 145 )
-
-[node name="RedLight7" parent="RedLights" instance=ExtResource( 32 )]
-position = Vector2( -925, 145 )
-
-[node name="RedLight8" parent="RedLights" instance=ExtResource( 32 )]
-position = Vector2( -1000, 145 )
-
 [node name="InstantTeleporter" parent="." instance=ExtResource( 33 )]
 position = Vector2( -857.5, 145 )
 
 [node name="TeleportPosition" parent="InstantTeleporter" index="1"]
-position = Vector2( 160, 0 )
+position = Vector2( 161, 0 )
 
 [connection signal="solved" from="ColorPatternPuzzle" to="YSort/Environment/Door" method="open_door"]
 [connection signal="health_changed" from="YSort/Player" to="InterfaceLayer/Interface" method="_on_Player_health_changed"]
 [connection signal="max_health_changed" from="YSort/Player" to="InterfaceLayer/Interface" method="_on_Player_max_health_changed"]
 [connection signal="tree_exited" from="YSort/Player" to="." method="_on_Player_tree_exited"]
-[connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Player" method="_on_HealHeart_body_entered"]
 [connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Environment/HealHeart" method="_on_HealHeart_body_entered"]
+[connection signal="body_entered" from="YSort/Environment/HealHeart" to="YSort/Player" method="_on_HealHeart_body_entered"]
 [connection signal="mimic_defeated" from="YSort/Enemies/Mimic" to="." method="_on_Mimic_defeated"]
 [connection signal="pressed" from="Camera2D/Control/Menu" to="." method="_on_Menu_pressed"]
 
