@@ -15,8 +15,8 @@ var _form := false
 var _prep := false
 var _launch := false
 var _direction := 0
-
 var _velocity := Vector2.ZERO
+
 
 func _ready():
 	$AnimatedSprite.play("default")
@@ -24,7 +24,6 @@ func _ready():
 
 
 func _process(delta):
-
 	if $Timer.time_left >= 4:
 		_state = State.FORMING
 	elif $Timer.time_left >= 1:
@@ -53,7 +52,8 @@ func _process(delta):
 					_state = State.INACTIVE
 				
 	_velocity = move_and_slide(_velocity)
-				
+
+
 func _on_Timer_timeout():
 	_trigger_explosion()
 
@@ -71,13 +71,12 @@ func _on_Stats_no_health():
 	var enemyDeathEffect = EnemyDeathEffect.instance()
 	enemyDeathEffect.scale.x = 100
 	enemyDeathEffect.scale.y = 100
-	
 	get_parent().add_child(enemyDeathEffect)
 	enemyDeathEffect.global_position = global_position
-	enemyDeathEffect.position.y = 100
+	enemyDeathEffect.position.y += 600
 
 
 func _trigger_explosion():
-	$Hitbox.scale.x = 10
-	$Hitbox.scale.y = 10
+	$Hitbox.scale.x = 50
+	$Hitbox.scale.y = 50
 	$Stats.health -= 1

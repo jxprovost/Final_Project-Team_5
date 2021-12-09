@@ -34,15 +34,16 @@ animations = [ {
 
 [sub_resource type="CircleShape2D" id=6]
 
-[sub_resource type="CircleShape2D" id=7]
-
 [sub_resource type="CircleShape2D" id=8]
 
 [sub_resource type="CircleShape2D" id=9]
-radius = 145.572
+radius = 227.703
 
 [sub_resource type="CircleShape2D" id=10]
-radius = 11.1374
+radius = 9.66685
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 10.7683
 
 [node name="FloatingEye" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -51,7 +52,6 @@ script = ExtResource( 2 )
 rotation = 3.92699
 scale = Vector2( 0.05, 0.05 )
 frames = SubResource( 5 )
-frame = 5
 playing = true
 flip_v = true
 
@@ -61,13 +61,6 @@ shape = SubResource( 6 )
 
 [node name="Stats" parent="." instance=ExtResource( 6 )]
 max_health = 4
-
-[node name="Hitbox" parent="." instance=ExtResource( 4 )]
-collision_mask = 4
-
-[node name="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2( 3.5, 0.6 )
-shape = SubResource( 7 )
 
 [node name="Hurtbox" parent="." instance=ExtResource( 5 )]
 collision_layer = 8
@@ -88,10 +81,17 @@ shape = SubResource( 9 )
 position = Vector2( 3.5, 0.6 )
 shape = SubResource( 10 )
 
+[node name="Hitbox" parent="." instance=ExtResource( 4 )]
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2( 3.5, 0.6 )
+shape = SubResource( 7 )
+
 [connection signal="no_health" from="Stats" to="." method="_on_Stats_no_health"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
 
-[editable path="Hitbox"]
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]
 [editable path="SoftCollision"]
+[editable path="Hitbox"]

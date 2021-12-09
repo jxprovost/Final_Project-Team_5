@@ -17,7 +17,6 @@ const EnemyDeathEffect := preload("res://Effects/EnemyDeathEffect.tscn")
 
 var _velocity := Vector2.ZERO
 var _knockback := Vector2.ZERO
-
 var _state = State.IDLE
 
 onready var _sprite := $AnimatedSprite
