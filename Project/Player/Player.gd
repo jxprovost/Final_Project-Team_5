@@ -127,3 +127,19 @@ func set_health(value):
 	emit_signal("health_changed", health)
 	if health <= 0:
 		emit_signal("no_health")
+
+
+func _on_HealHeart_body_entered(body):
+	addHeart()
+
+func _on_HealHeart2_body_entered(body):
+	print(2)
+	addHeart()
+
+func _on_HealHeart3_body_entered(body):
+	addHeart()
+
+
+func addHeart():
+	if(health < max_health):
+		set_health(health + (max_health - health))
